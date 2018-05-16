@@ -45,13 +45,11 @@ export class AngularLoaderDirective implements OnInit {
 
     // console.log(this._el.nativeElement.parentElement);
     // console.log(this._el.nativeElement.parentElement);
-    console.log(this._renderer);
-
 
     const el: EmbeddedViewRef<any> = this._viewContainerRef.createEmbeddedView(this._templateRef);
     if (this.loader) {
       const cmpFactory: ComponentFactory<SpinnerComponent> = this._cfr.resolveComponentFactory(SpinnerComponent);
-      const comp = this._viewContainerRef.createComponent(cmpFactory, 0);
+      this._viewContainerRef.createComponent(cmpFactory, 0);
       // this._renderer.appendChild()
       // this._renderer.setStyle(this._renderer)
       // this._viewContainerRef.move()
