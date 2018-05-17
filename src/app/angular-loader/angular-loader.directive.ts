@@ -1,69 +1,56 @@
-import { SpinnerComponent } from './spinner/spinner.component';
 import {
-  ComponentFactory,
-  ComponentFactoryResolver,
   Directive,
   ElementRef,
-  EmbeddedViewRef,
-  HostBinding,
+  Inject,
   Input,
-  OnInit,
   Renderer2,
-  TemplateRef,
-  ViewContainerRef
 } from '@angular/core';
+import { config, IConfig } from './config';
 
 @Directive({
   selector: '[loader]',
 })
-export class AngularLoaderDirective implements OnInit {
-
+export class AngularLoaderDirective {
   @Input()
-  public loader: boolean;
-
-  // @HostBinding('style.position')
-  // public position: string = 'relative';
-
-  // @HostBinding('style.backgroundColor')
-  // public color: string = 'yellow';
-
-  // @HostBinding('class.className') variableName = true;
-
-  // public loader;
-
-
-  public constructor(
-    private _templateRef: TemplateRef<any>,
-    private _viewContainerRef: ViewContainerRef,
-    private _cfr: ComponentFactoryResolver,
-    private _el: ElementRef,
-    private _renderer: Renderer2
-  ) { }
-
-  public ngOnInit(): void {
-
-
-    // console.log(this._el.nativeElement.parentElement);
-    // console.log(this._el.nativeElement.parentElement);
-
-    const el: EmbeddedViewRef<any> = this._viewContainerRef.createEmbeddedView(this._templateRef);
-    if (this.loader) {
-      const cmpFactory: ComponentFactory<SpinnerComponent> = this._cfr.resolveComponentFactory(SpinnerComponent);
-      this._viewContainerRef.createComponent(cmpFactory, 0);
-      // this._renderer.appendChild()
-      // this._renderer.setStyle(this._renderer)
-      // this._viewContainerRef.move()
-
-      // this._templateRef.insert()
-
-
-
-      // this._viewContainerRef.createEmbeddedView(componentRef);
-      // this._templateRef.elementRef.nativeElement.style.position = 'relative';
+  public set show(value: boolean) {
+    if (!value) {
+      this.loaderEl ? this._setStyles( this.loaderEl, {display: 'none'}) : null;
+      return;
     }
 
+    this.loaderEl = this._renderer.createElement('div');
+    const img: HTMLImageElement = this._renderer.createElement('img');
+
+    this._renderer.appendChild(this._el.nativeElement, this.loaderEl);
+    this._renderer.appendChild(this.loaderEl, img);
+
+    this._setStyles(this._el.nativeElement, this.hostStyles);
+    this._setStyles(this.loaderEl, this.loaderStyles);
+    this._setStyles(img, this.imgStyles);
+
+    this._renderer.setAttribute(img, 'src', this.img);
   }
 
+  public loaderEl: HTMLDivElement;
+  public loaderStyles: IConfig['loaderStyles'];
+  public imgStyles: IConfig['imgStyles'];
+  public hostStyles: IConfig['hostStyles'];
+  public img: IConfig['img'];
+
+  public constructor(
+    @Inject(config) private _config: IConfig,
+    private _el: ElementRef,
+    private _renderer: Renderer2
+  ) {
+    this.loaderStyles = _config.loaderStyles;
+    this.imgStyles = _config.imgStyles;
+    this.hostStyles = _config.hostStyles;
+    this.img = _config.img;
+  }
+
+  private _setStyles (element: HTMLElement, styles: {[key: string]: string} ): void {
+    Object.entries(styles).forEach(([key, value]: any) => {
+      this._renderer.setStyle(element, key, value);
+    });
+  }
 }
-// opacity,  backdround color,
-// img

@@ -1,27 +1,68 @@
-# AngularLoader
+<a href="http://jsdaddy.io/img/logo.png">
+  <h1 align="center">NGX Loader INDICATOR</h1>
+</a>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
+<p align="center">
+  NGX LOADER INDICATOR is the best directive without wrapping your element to additional component
+</p>
 
-## Development server
+## Installing
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```bash
+$ npm install --save ngx-loader-indicator
+```
 
-## Code scaffolding
+## Quickstart
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Import **ngx-loader-indicator** module in Angular app.
 
-## Build
+```typescript
+import {NgxLoaderIndicatorModule} from 'ngx-loader-indicator'
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+(...)
 
-## Running unit tests
+@NgModule({
+  (...)
+  imports: [
+    NgxLoaderIndicatorModule.forRoot(options)
+  ]
+  (...)
+})
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Usage
 
-## Running end-to-end tests
+```html
+<div loader [show]="isLoading">Content</div> 
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+#### Examples
 
-## Further help
+```html
+<form (ngSubmit)="save(form.value)" [formGroup]="form" loader [show]="isLoading">
+  <h2>Login</h2>
+  <input matInput type="email" placeholder="Email" #email formControlName="email">
+  <input matInput type="password" placeholder="Password" #name formControlName="password">
+  <button mat-button [disabled]="form.invalid">Login</button>
+</form>
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## ngx-loader-indicator Options
+You can define your custom options
+
+### custom img (string)
+```typescript
+import {NgxLoaderIndicatorModule} from 'ngx-loader-indicator'
+
+(...)
+
+@NgModule({
+  (...)
+  imports: [
+    NgxLoaderIndicatorModule.forRoot({
+      img: 'https://avatars2.githubusercontent.com/u/32452610?s=200&v=4'
+    })
+  ]
+  (...)
+})
+```

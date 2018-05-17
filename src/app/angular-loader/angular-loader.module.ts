@@ -1,7 +1,7 @@
 import { AngularLoaderDirective } from './angular-loader.directive';
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SpinnerComponent } from './spinner/spinner.component';
+import { config, INITIAL_CONFIG, initialConfig, NEW_CONFIG, optionsConfig } from './config';
 
 @NgModule({
   imports: [
@@ -9,11 +9,39 @@ import { SpinnerComponent } from './spinner/spinner.component';
   ],
   declarations: [
     AngularLoaderDirective,
-    SpinnerComponent
   ],
-  entryComponents: [SpinnerComponent],
   exports: [
     AngularLoaderDirective,
   ]
 })
-export class AngularLoaderModule { }
+export class NgxLoaderIndicatorModule {
+  public static forRoot(configValue?: optionsConfig): ModuleWithProviders {
+    return {
+      ngModule: NgxLoaderIndicatorModule,
+      providers: [
+        {
+          provide: NEW_CONFIG,
+          useValue: configValue
+        },
+        {
+          provide: INITIAL_CONFIG,
+          useValue: initialConfig
+        },
+        {
+          provide: config,
+          useFactory: _configFactory,
+          deps: [INITIAL_CONFIG, NEW_CONFIG]
+        },
+      ]
+    };
+  }
+}
+
+
+/**
+ * @internal
+ */
+export function _configFactory
+(initConfig: optionsConfig, configValue: optionsConfig | (() => optionsConfig)): Function | optionsConfig {
+  return (typeof configValue === 'function') ? configValue() : { ...initConfig, ...configValue };
+}
