@@ -17,17 +17,7 @@ import { MatButtonModule, MatCardModule, MatInputModule } from '@angular/materia
     MatButtonModule,
     MatCardModule,
     MatInputModule,
-    NgxLoaderIndicatorModule.forRoot({
-      loaderStyles: {
-        'position': 'absolute',
-        'left': '0',
-        'right': '0',
-        'top': '0',
-        'bottom': '0',
-        'background': 'rgba(255, 255, 255, 0.9)',
-        'z-index': '50',
-      }
-    }),
+    NgxLoaderIndicatorModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
