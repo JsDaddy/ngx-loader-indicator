@@ -539,7 +539,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/user/jsDaddyProjects/ngx-loader-indicator/src/styles.scss */"./src/styles.scss");
+module.exports = __webpack_require__(/*! /Users/igornepipenko/jsdaddy/ngx-loader-indicator/src/styles.scss */"./src/styles.scss");
 
 
 /***/ })
