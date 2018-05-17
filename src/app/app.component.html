@@ -11,15 +11,9 @@
       <div class="col-6">
         <h1 class="title">
           <span class="jq-label">Angular</span>
-          <span class="plugin-name">NGX LOADER INDICATOR Plugin</span>
+          <span class="plugin-name">NGX LOADER Plugin</span>
         </h1>
-        <span class="subtitle">NGX LOADER INDICATOR is the best directive without wrapping your element to additional component</span>
-        <br>
-        <span>Documentation - see docs on
-          <a class="git-link" target="_blank" href="https://github.com/JsDaddy/ngx-loader-indicator">
-            <img src="/assets/images/GitHub-Mark-64px.png" alt="github">
-          </a>
-        </span>
+        <span class="subtitle">NGX LOADER is the best directive without wrapping your element to additional component</span>
       </div>
     </div>
   </div>
@@ -28,13 +22,12 @@
 <section>
   <div class="container">
     <div class="row">
-      <div class="col-3"></div>
-      <div class="col-6">
+      <div class="col-12">
         <mat-card>
           <form (ngSubmit)="login(auth.value)" [formGroup]="auth" loader [show]="isLoading">
-            <h2>Login</h2>
+            <h2 class="login-title">Login</h2>
             <div>
-              <mat-form-field class="col-12">
+              <mat-form-field class="">
                 <input matInput type="email" placeholder="Email" #email formControlName="email">
                 <mat-hint align="end" *ngIf="auth.controls['email'].errors && auth.controls['email'].touched">
                   You can't leave this empty.
@@ -42,9 +35,10 @@
               </mat-form-field>
             </div>
             <div>
-              <mat-form-field class="col-12">
+              <mat-form-field class="">
                 <input matInput type="password" placeholder="Password" #name formControlName="password">
-                <mat-hint align="end" *ngIf="auth.controls['password'].hasError('required') && auth.controls['password'].touched">
+                <mat-hint align="end"
+                          *ngIf="auth.controls['password'].hasError('required') && auth.controls['password'].touched">
                   You can't leave this empty.
                 </mat-hint>
               </mat-form-field>
@@ -53,6 +47,19 @@
             <button mat-button [disabled]="auth.invalid">Login</button>
           </form>
         </mat-card>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="mat-grid-wr">
+          <span>Documentation - see docs on
+            <a class="git-link" target="_blank" href="https://github.com/JsDaddy/ngx-loader-indicator">
+              <img src="../assets/images/GitHub-Mark-64px.png" alt="github">
+            </a>
+          </span>
+        </div>
       </div>
     </div>
   </div>

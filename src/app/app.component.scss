@@ -52,3 +52,16 @@ header {
     width: 20px;
   }
 }
+
+.mat-card:not([class*=mat-elevation-z]) {
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, .1)
+}
+
+.login-title {
+  padding-bottom: 40px;
+}
+.mat-card[_ngcontent-c0]:not([class*=mat-elevation-z]) {
+  max-width: 615px;
+  margin: 0 auto 65px auto;
+  display: block;
+}
