@@ -49,8 +49,8 @@ export class AngularLoaderDirective {
   }
 
   private _setStyles (element: HTMLElement, styles: {[key: string]: string} ): void {
-    Object.entries(styles).forEach(([key, value]: any) => {
-      this._renderer.setStyle(element, key, value);
+    Object.keys(styles).forEach((key: any) => {
+      this._renderer.setStyle(element, key, styles[key]);
     });
   }
 }
