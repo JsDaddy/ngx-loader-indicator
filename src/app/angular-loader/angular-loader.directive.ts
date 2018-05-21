@@ -6,7 +6,6 @@ import {
   Renderer2
 } from '@angular/core';
 import { config, IConfig } from './config';
-import { animate, keyframes, query, stagger, style, transition, trigger } from '@angular/animations';
 
 @Directive({
   selector: '[loader]',
