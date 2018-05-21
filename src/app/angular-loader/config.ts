@@ -2,12 +2,12 @@ import { InjectionToken } from '@angular/core';
 
 export interface IStyles { [key: string]: string; }
 export interface IConfig {
-  img: string;
-  loaderStyles: IStyles;
-  imgStyles: IStyles;
-  hostStyles: IStyles;
+  img?: string;
+  loaderStyles?: IStyles;
+  imgStyles?: IStyles;
+  hostStyles?: IStyles;
   // TODO AnimationOptions
-  rotate: {
+  rotate?: {
     delay?: number;
     direction?: 'normal' | 'reverse' | 'alternate' | 'alternate-reverse';
     duration?: number;
@@ -20,9 +20,7 @@ export interface IConfig {
   };
 }
 
-export type optionsConfig = {
-  [P in keyof IConfig]?: IConfig[P]
-};
+export type optionsConfig = IConfig;
 
 export const config: InjectionToken<string> = new InjectionToken('config');
 export const NEW_CONFIG: InjectionToken<string> = new InjectionToken('NEW_CONFIG');

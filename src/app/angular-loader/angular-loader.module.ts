@@ -1,7 +1,7 @@
 import { AngularLoaderDirective } from './angular-loader.directive';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { config, INITIAL_CONFIG, initialConfig, NEW_CONFIG, optionsConfig } from './config';
+import { config, IConfig, INITIAL_CONFIG, initialConfig, NEW_CONFIG, optionsConfig } from './config';
 
 @NgModule({
   imports: [
@@ -42,14 +42,16 @@ export class NgxLoaderIndicatorModule {
  * @internal
  */
 export function _configFactory
-  (initConfig: optionsConfig, configValue: optionsConfig | (() => optionsConfig)): Function | optionsConfig {
-  return (typeof configValue === 'function')
-    ? configValue()
-    : {
-      ...initConfig,
-      ...configValue,
-      loaderStyles: { ...initConfig.loaderStyles, ...configValue.loaderStyles },
-      imgStyles: { ...initConfig.imgStyles, ...configValue.imgStyles },
-      rotate: { ...initConfig.rotate, ...configValue.rotate }
-    };
+  (initConfig: optionsConfig, configValue: optionsConfig): Function | optionsConfig {
+  const loaderStyles: IConfig['loaderStyles'] = configValue ? configValue.loaderStyles : null;
+  const imgStyles: IConfig['imgStyles'] = configValue ? configValue.imgStyles : null;
+  const rotate: IConfig['rotate'] = configValue ? configValue.rotate : null;
+
+  return {
+    ...initConfig,
+    ...configValue,
+    loaderStyles: { ...initConfig.loaderStyles, ...loaderStyles },
+    imgStyles: { ...initConfig.imgStyles, ...imgStyles },
+    rotate: { ...initConfig.rotate, ...rotate }
+  };
 }
