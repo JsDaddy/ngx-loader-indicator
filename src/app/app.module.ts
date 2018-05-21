@@ -4,16 +4,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgxLoaderIndicatorModule } from './angular-loader/angular-loader.module';
 import { AppComponent } from './app.component';
 import { MatButtonModule, MatCardModule, MatInputModule } from '@angular/material';
-
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
     ReactiveFormsModule,
+    NoopAnimationsModule,
     MatButtonModule,
     MatCardModule,
-    MatInputModule, 
+    MatInputModule,
     CustomLoaderModule,
     NgxLoaderIndicatorModule.forRoot(),
   ],
