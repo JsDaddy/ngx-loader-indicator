@@ -28,8 +28,16 @@
   },
   "author": "info@jsdaddy.io",
   "contributors": [
-    { "email": "igornepipenko@gmail.com", "name": "Igor Nepipenko", "url": "https://github.com/NepipenkoIgor" },
-    { "email": "limarenkodenis@gmail.com", "name": "Denis Limarenko", "url": "https://github.com/LimarenkoDenis" }
+    {
+      "email": "igornepipenko@gmail.com",
+      "name": "Igor Nepipenko",
+      "url": "https://github.com/NepipenkoIgor"
+    },
+    {
+      "email": "limarenkodenis@gmail.com",
+      "name": "Denis Limarenko",
+      "url": "https://github.com/LimarenkoDenis"
+    }
   ],
   "peerDependencies": {
     "@angular/common": ">=2.4.3",

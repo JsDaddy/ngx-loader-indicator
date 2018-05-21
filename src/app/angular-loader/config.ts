@@ -6,6 +6,18 @@ export interface IConfig {
   loaderStyles: IStyles;
   imgStyles: IStyles;
   hostStyles: IStyles;
+  // TODO AnimationOptions
+  rotate: {
+    delay?: number;
+    direction?: 'normal' | 'reverse' | 'alternate' | 'alternate-reverse';
+    duration?: number;
+    easing?: string;
+    endDelay?: number;
+    fill?: 'none' | 'forwards' | 'backwards' | 'both' | 'auto';
+    id?: string;
+    iterationStart?: number;
+    iterations?: number;
+  };
 }
 
 export type optionsConfig = {
@@ -27,16 +39,17 @@ export const initialConfig: IConfig = {
     'bottom': '0',
     'background': 'rgba(255, 255, 255, 0.8)',
     'z-index': '50',
+    'display': 'flex',
+    'justify-content': 'center',
+    'align-items': 'center',
   },
   imgStyles: {
-    'position': 'absolute',
-    'top': '50%',
-    'left': '50%',
-    'transform': 'translate(-50%, -50%)',
-    'max-width': '20px',
-    'max-height': '20px',
+    'width': '30px',
   },
   hostStyles: {
     'position': 'relative'
-  }
+  },
+  rotate: {
+    iterations: Infinity
+  },
 };

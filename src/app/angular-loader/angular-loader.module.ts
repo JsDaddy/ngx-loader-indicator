@@ -5,7 +5,7 @@ import { config, INITIAL_CONFIG, initialConfig, NEW_CONFIG, optionsConfig } from
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
   ],
   declarations: [
     AngularLoaderDirective,
@@ -42,6 +42,14 @@ export class NgxLoaderIndicatorModule {
  * @internal
  */
 export function _configFactory
-(initConfig: optionsConfig, configValue: optionsConfig | (() => optionsConfig)): Function | optionsConfig {
-  return (typeof configValue === 'function') ? configValue() : { ...initConfig, ...configValue };
+  (initConfig: optionsConfig, configValue: optionsConfig | (() => optionsConfig)): Function | optionsConfig {
+  return (typeof configValue === 'function')
+    ? configValue()
+    : {
+      ...initConfig,
+      ...configValue,
+      loaderStyles: { ...initConfig.loaderStyles, ...configValue.loaderStyles },
+      imgStyles: { ...initConfig.imgStyles, ...configValue.imgStyles },
+      rotate: { ...initConfig.rotate, ...configValue.rotate }
+    };
 }
