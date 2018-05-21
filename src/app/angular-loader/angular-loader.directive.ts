@@ -3,7 +3,7 @@ import {
   ElementRef,
   Inject,
   Input,
-  Renderer2,
+  Renderer2
 } from '@angular/core';
 import { config, IConfig } from './config';
 
@@ -14,12 +14,18 @@ export class AngularLoaderDirective {
   @Input()
   public set show(value: boolean) {
     if (!value) {
-      this.loaderEl ? this._setStyles( this.loaderEl, {display: 'none'}) : null;
+      this.loaderEl ? this._setStyles(this.loaderEl, { display: 'none' }) : null;
       return;
     }
 
     this.loaderEl = this._renderer.createElement('div');
-    const img: HTMLImageElement = this._renderer.createElement('img');
+    // tslint:disable-next-line:typedef
+    const img = this._renderer.createElement('img');
+
+    img.animate([
+      { transform: 'rotate(360deg)' },
+      { transform: 'rotate(0deg)' },
+    ], this.rotateAnimaitioan);
 
     this._renderer.appendChild(this._el.nativeElement, this.loaderEl);
     this._renderer.appendChild(this.loaderEl, img);
@@ -36,6 +42,7 @@ export class AngularLoaderDirective {
   public imgStyles: IConfig['imgStyles'];
   public hostStyles: IConfig['hostStyles'];
   public img: IConfig['img'];
+  public rotateAnimaitioan: IConfig['rotate'];
 
   public constructor(
     @Inject(config) private _config: IConfig,
@@ -46,9 +53,10 @@ export class AngularLoaderDirective {
     this.imgStyles = _config.imgStyles;
     this.hostStyles = _config.hostStyles;
     this.img = _config.img;
+    this.rotateAnimaitioan = _config.rotate;
   }
 
-  private _setStyles (element: HTMLElement, styles: {[key: string]: string} ): void {
+  private _setStyles(element: HTMLElement, styles: { [key: string]: string }): void {
     Object.keys(styles).forEach((key: any) => {
       this._renderer.setStyle(element, key, styles[key]);
     });
