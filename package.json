@@ -21,7 +21,6 @@
     "e2e": "ng e2e",
     "build:libary": "ng-packagr -p package.json"
   },
-  "private": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/JsDaddy/ngx-loader-indicator.git"
@@ -34,7 +33,6 @@
       "url": "https://github.com/NepipenkoIgor"
     }
   ],
-  "peerDependencies": {},
   "dependencies": {
     "@angular/animations": "7.2.11",
     "@angular/cdk": "6.0.2",
