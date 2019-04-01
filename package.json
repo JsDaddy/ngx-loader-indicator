@@ -50,6 +50,10 @@
     "tslib": "^1.9.0",
     "zone.js": "0.8.29"
   },
+  "peerDependencies": {
+    "@angular/common": ">=6.0.0",
+    "@angular/core": ">=6.0.0"
+  },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.13.0",
     "@angular/cli": "7.3.7",
