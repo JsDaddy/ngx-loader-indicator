@@ -12,7 +12,7 @@ import { config, IConfig } from './config';
 })
 export class AngularLoaderDirective {
   @Input()
-  public set show(value: boolean) {
+  public set loader(value: boolean) {
     if (!value) {
       this.loaderEl ? this._setStyles(this.loaderEl, { display: 'none' }) : null;
       return;

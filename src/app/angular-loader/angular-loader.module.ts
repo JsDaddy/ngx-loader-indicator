@@ -35,6 +35,11 @@ export class NgxLoaderIndicatorModule {
       ]
     };
   }
+  public static forChild(_configValue?: optionsConfig): ModuleWithProviders {
+    return {
+        ngModule: NgxLoaderIndicatorModule
+    };
+}
 }
 
 

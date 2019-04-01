@@ -24,7 +24,7 @@
     <div class="row">
       <div class="col-12">
         <mat-card>
-          <form (ngSubmit)="login(auth.value)" [formGroup]="auth" loader [show]="isLoading">
+          <form (ngSubmit)="login(auth.value)" [formGroup]="auth" [loader]="isLoading">
             <h2 class="login-title">Login</h2>
             <div>
               <mat-form-field class="">
@@ -43,7 +43,6 @@
                 </mat-hint>
               </mat-form-field>
             </div>
-            <div>{{message}}</div>
             <button mat-button [disabled]="auth.invalid">Login</button>
           </form>
         </mat-card>
@@ -63,7 +62,7 @@
         <div class="mat-grid-wr">
           <span>Documentation - see docs on
             <a class="git-link" target="_blank" href="https://github.com/JsDaddy/ngx-loader-indicator">
-              <img src="../assets/images/GitHub-Mark-64px.png" alt="github">
+              <img src="assets/images/GitHub-Mark-64px.png" alt="github">
             </a>
           </span>
         </div>

@@ -33,13 +33,13 @@ import {NgxLoaderIndicatorModule} from 'ngx-loader-indicator'
 ### Usage
 
 ```html
-<div loader [show]="isLoading">Content</div> 
+<div [loader]="isLoading">Content</div> 
 ```
 
 #### Examples
 
 ```html
-<form (ngSubmit)="save(form.value)" [formGroup]="form" loader [show]="isLoading">
+<form (ngSubmit)="save(form.value)" [formGroup]="form" [loader]="isLoading">
   <h2>Login</h2>
   <input matInput type="email" placeholder="Email" #email formControlName="email">
   <input matInput type="password" placeholder="Password" #name formControlName="password">

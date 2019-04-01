@@ -1,6 +1,6 @@
 {
   "name": "ngx-loader-indicator",
-  "version": "7.0.0",
+  "version": "7.1.0",
   "description": "The best directive without wrapping your element to additional component",
   "license": "MIT",
   "keywords": [
@@ -60,6 +60,7 @@
     "@types/jasmine": "2.8.6",
     "@types/jasminewd2": "2.0.3",
     "@types/node": "8.9.4",
+    "angular-cli-ghpages": "^0.5.3",
     "codelyzer": "4.2.1",
     "jasmine-core": "2.99.1",
     "jasmine-spec-reporter": "4.2.1",
