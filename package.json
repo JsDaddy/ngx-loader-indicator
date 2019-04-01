@@ -1,6 +1,6 @@
 {
   "name": "ngx-loader-indicator",
-  "version": "6.0.0",
+  "version": "7.0.0",
   "description": "The best directive without wrapping your element to additional component",
   "license": "MIT",
   "keywords": [
@@ -32,39 +32,31 @@
       "email": "igornepipenko@gmail.com",
       "name": "Igor Nepipenko",
       "url": "https://github.com/NepipenkoIgor"
-    },
-    {
-      "email": "limarenkodenis@gmail.com",
-      "name": "Denis Limarenko",
-      "url": "https://github.com/LimarenkoDenis"
     }
   ],
-  "peerDependencies": {
-    "@angular/common": ">=2.4.3",
-    "@angular/core": ">=2.4.3",
-    "@angular/forms": ">=2.4.3"
-  },
+  "peerDependencies": {},
   "dependencies": {
-    "@angular/animations": "6.0.2",
+    "@angular/animations": "7.2.11",
     "@angular/cdk": "6.0.2",
-    "@angular/common": "6.0.0",
-    "@angular/compiler": "6.0.0",
-    "@angular/core": "6.0.0",
-    "@angular/forms": "6.0.0",
-    "@angular/http": "6.0.0",
+    "@angular/common": "7.2.11",
+    "@angular/compiler": "7.2.11",
+    "@angular/core": "7.2.11",
+    "@angular/forms": "7.2.11",
+    "@angular/http": "7.2.11",
     "@angular/material": "6.0.2",
-    "@angular/platform-browser": "6.0.0",
-    "@angular/platform-browser-dynamic": "6.0.0",
+    "@angular/platform-browser": "7.2.11",
+    "@angular/platform-browser-dynamic": "7.2.11",
     "bootstrap": "4.1.1",
     "core-js": "2.5.4",
-    "rxjs": "6.0.0",
-    "zone.js": "0.8.26"
+    "rxjs": "6.4.0",
+    "tslib": "^1.9.0",
+    "zone.js": "0.8.29"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "0.6.1",
-    "@angular/cli": "6.0.1",
-    "@angular/compiler-cli": "6.0.0",
-    "@angular/language-service": "6.0.0",
+    "@angular-devkit/build-angular": "~0.13.0",
+    "@angular/cli": "7.3.7",
+    "@angular/compiler-cli": "7.2.11",
+    "@angular/language-service": "7.2.11",
     "@types/jasmine": "2.8.6",
     "@types/jasminewd2": "2.0.3",
     "@types/node": "8.9.4",
@@ -80,7 +72,7 @@
     "protractor": "5.3.0",
     "ts-node": "5.0.1",
     "tslint": "5.9.1",
-    "typescript": "2.7.2"
+    "typescript": "3.2.4"
   },
   "ngPackage": true
 }
