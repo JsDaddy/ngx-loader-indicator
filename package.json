@@ -19,7 +19,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:libary": "ng-packagr -p package.json"
+    "build:library": "ng-packagr -p package.json"
   },
   "repository": {
     "type": "git",
@@ -75,7 +75,8 @@
     "protractor": "5.3.0",
     "ts-node": "5.0.1",
     "tslint": "5.9.1",
-    "typescript": "3.2.4"
+    "typescript": "3.2.4",
+    "ng-packagr": "^5.0.1"
   },
   "ngPackage": true
 }
