@@ -5,6 +5,7 @@
 <p align="center">
   NGX LOADER INDICATOR is the best directive without wrapping your element to additional component
 </p>
+
 [![npm](https://img.shields.io/npm/v/ngx-loader-indicator.svg)](https://www.npmjs.com/package/ngx-loader-indicator)
 
 <a href="https://www.npmjs.com/package/ngx-loader-indicator">
