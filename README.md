@@ -7,11 +7,9 @@
 </p>
 
 [![npm](https://img.shields.io/npm/v/ngx-loader-indicator.svg)](https://www.npmjs.com/package/ngx-loader-indicator)
-
 <a href="https://www.npmjs.com/package/ngx-loader-indicator">
   <img src="https://img.shields.io/npm/dt/ngx-loader-indicator.svg" alt="npm downloads" >
 </a>
-
 [![npm](https://img.shields.io/npm/dm/ngx-loader-indicator.svg)](https://www.npmjs.com/package/ngx-loader-indicator)
 
 You can also try our NGX MASK [Download](https://www.npmjs.com/package/ngx-mask) it.
