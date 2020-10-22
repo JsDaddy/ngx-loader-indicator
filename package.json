@@ -19,7 +19,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:library": "ng-packagr -p package.json"
+    "build:library": "ng-packagr -p package.json",
+    "precommit-msg": "echo 'Please wait while we do our pre-commit checks...' && exit 0"
   },
   "repository": {
     "type": "git",
@@ -34,8 +35,8 @@
     }
   ],
   "peerDependencies": {
-    "@angular/common": ">=6.0.0",
-    "@angular/core": ">=6.0.0"
+    "@angular/common": ">=10.0.0",
+    "@angular/core": ">=10.0.0"
   },
   "dependencies": {
     "@angular/animations": "8.2.0",
@@ -67,6 +68,7 @@
     "@types/node": "12.6.9",
     "angular-cli-ghpages": "^0.5.3",
     "codelyzer": "5.1.0",
+    "husky": "^4.3.0",
     "jasmine-core": "3.4.0",
     "jasmine-spec-reporter": "4.2.1",
     "karma": "4.2.0",
@@ -80,5 +82,11 @@
     "tslint": "5.18.0",
     "typescript": "3.4.5"
   },
-  "ngPackage": true
+  "ngPackage": true,
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run precommit-msg"
+    }
+  }
 }
