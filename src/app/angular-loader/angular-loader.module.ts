@@ -15,7 +15,7 @@ import { config, IConfig, INITIAL_CONFIG, initialConfig, NEW_CONFIG, optionsConf
   ]
 })
 export class NgxLoaderIndicatorModule {
-  public static forRoot(configValue?: optionsConfig): ModuleWithProviders {
+  public static forRoot(configValue?: optionsConfig): ModuleWithProviders<NgxLoaderIndicatorModule> {
     return {
       ngModule: NgxLoaderIndicatorModule,
       providers: [
@@ -35,7 +35,7 @@ export class NgxLoaderIndicatorModule {
       ]
     };
   }
-  public static forChild(_configValue?: optionsConfig): ModuleWithProviders {
+  public static forChild(_configValue?: optionsConfig): ModuleWithProviders<NgxLoaderIndicatorModule> {
     return {
         ngModule: NgxLoaderIndicatorModule
     };
