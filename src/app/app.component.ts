@@ -1,6 +1,6 @@
 import { of } from 'rxjs';
 import { Component, HostBinding } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { delay } from 'rxjs/operators';
 
 @Component({
@@ -9,12 +9,12 @@ import { delay } from 'rxjs/operators';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public auth: FormGroup;
+  public auth: UntypedFormGroup;
   public isLoading: boolean = false;
 
   public img: string = '/assets/images/spinner.svg';
 
-  public constructor(private _fb: FormBuilder) {}
+  public constructor(private _fb: UntypedFormBuilder) {}
 
   public ngOnInit(): void {
     this.auth = this._fb.group({
