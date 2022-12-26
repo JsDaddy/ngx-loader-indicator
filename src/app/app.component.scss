@@ -1,67 +1,43 @@
-.wrapper {
-  width: 500px;
-  height: 500px;
-  background: #ccc;
-}
-
-$black: #383838;
-$text-color: #383838;
-$grey-header: #f8f8f8;
-$white: #ffffff;
-$yellow: #ffcc00;
-
-$transition-default: all ease 0.15s;
-
-header {
-  padding: 10px 0;
-  background-color: #f8f8f8;
-  margin-bottom: 100px;
-  .logo {
+.content-wrapper {
     display: flex;
-    align-items: center;
-    height: 100%;
-    padding-top: 6px;
-    a {
-      display: block;
-      img {
-        width: 100%;
-        max-width: 140px;
-      }
-    }
-  }
-  .title {
-    padding: 0;
-    margin: 0;
-    .plugin-name {
-      font-size: 30px;
-      color: $yellow;
-    }
-    .jq-label {
-      font-size: 26px;
-      line-height: 30px;
-      color: $black;
-      display: block;
-    }
-  }
-  span.subtitle {
-    margin-bottom: 20px;
-    font-size: 14px;
-  }
+    justify-content: center;
+    overflow: auto;
+    padding: 32px 16px;
+    box-sizing: border-box;
 
-  .git-link img {
-    width: 20px;
-  }
+    .main-container {
+        width: 980px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .row {
+            display: flex;
+            gap: 16px;
+
+            mat-card {
+                width: 100%;
+
+                pre {
+                    overflow: auto;
+                }
+
+                form {
+                    width: 350px;
+
+                    mat-form-field,
+                    input {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
 }
 
-.mat-card:not([class*=mat-elevation-z]) {
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, .1)
-}
-
-.login-title {
-  padding-bottom: 40px;
-}
-.mat-card[_ngcontent-c0]:not([class*=mat-elevation-z]) {
-  max-width: 615px;
-  margin: 0 auto 65px auto;
-  display: block;
+@media only screen and (max-width: 980px) {
+    .main-container {
+        max-width: 100%;
+        min-width: 100%;
+    }
 }
