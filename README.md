@@ -10,24 +10,72 @@
 [![npm](https://img.shields.io/npm/v/ngx-loader-indicator.svg)](https://www.npmjs.com/package/ngx-loader-indicator)
 [![npm downloads](https://img.shields.io/npm/dt/ngx-loader-indicator.svg)](https://npmjs.org/ngx-loader-indicator)
 
-[![npm](https://img.shields.io/npm/dm/ngx-loader-indicatore.svg)](https://www.npmjs.com/package/ngx-loader-indicator)
+[![npm](https://img.shields.io/npm/dm/ngx-loader-indicator.svg)](https://www.npmjs.com/package/ngx-loader-indicator)
 
 [![GitHub contributors](https://img.shields.io/github/contributors/JSDaddy/ngx-loader-indicator.svg?style=flat)](https://github.com/JSDaddy/ngx-loader-indicator)
 
 [![GitHub stars](https://img.shields.io/github/stars/JSDaddy/ngx-loader-indicator.svg?label=GitHub%20Stars&style=flat)](https://github.com/JSDaddy/ngx-loader-indicator)
 
-You can also try our NGX MASK [Download](https://www.npmjs.com/package/ngx-mask) it.
-You can also try our NGX COPYPASTE [Download](https://www.npmjs.com/package/ngx-copypaste) it.
-### You can see the full [documentation](https://jsdaddy.github.io/ngx-mask-page/) with examples.
+You can also try our NGX MASK [check](https://www.npmjs.com/package/ngx-mask) it.
+You can also try our NGX COPYPASTE [check](https://www.npmjs.com/package/ngx-copypaste) it.
+### You can try live  [demo](https://jsdaddy.github.io/ngx-loader-indicator/) with examples.
 ## Installing
 
 ```bash
 $ npm install --save ngx-loader-indicator
 ```
 
-## Quickstart
 
-Import **ngx-loader-indicator** module in Angular app.
+## Quickstart if ngx-loader-indicator version >= 15.0.0
+
+Pay attention this version works for angular >= 14.0.0
+
+Configure for application with `provideEnvironmentNgxLoaderIndicator`
+
+```typescript
+bootstrapApplication(AppComponent, {
+    providers: [
+        provideAnimations(),
+        provideEnvironmentNgxLoaderIndicator(),
+        (...)
+    ],
+}).catch((err) => console.error(err));
+````
+
+or configure for feature with `provideNgxLoaderIndicator` and import standalone directive `NgxLoaderIndicatorDirective`
+
+```typescript
+@Component({
+    selector: 'my-feature',
+    templateUrl: './my-feature.component.html',
+    styleUrls: ['./my-feature.component.css'],
+    standalone: true,
+    imports: [NgxLoaderIndicatorDirective, (...)],
+    providers: [
+        (...)
+        provideNgxLoaderIndicator({
+            img: 'https://avatars2.githubusercontent.com/u/32452610?s=200&v=4',
+            loaderStyles: {
+                background: 'rgba(255, 255, 255, 0.8)',
+            },
+            imgStyles: {
+                width: '50px',
+                background: 'yellow',
+            },
+            rotate: {
+                duration: 5000,
+            },
+        }),
+    ],
+})
+export class MyFeatureComponent {}
+````
+
+## Quickstart if ngx-loader-indicator version < 15.0.0
+
+Pay attention this version works for angular < 12.0.0
+
+Import module in needed module.
 
 ```typescript
 import {NgxLoaderIndicatorModule} from 'ngx-loader-indicator'
@@ -60,7 +108,7 @@ import {NgxLoaderIndicatorModule} from 'ngx-loader-indicator'
 </form>
 ```
 
-## ngx-loader-indicator Options
+## Options
 You can define your custom options
 
 
