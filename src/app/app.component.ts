@@ -1,5 +1,5 @@
 import { of } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import {
     ReactiveFormsModule,
     UntypedFormBuilder,
@@ -72,7 +72,7 @@ providers: [
 </div>    
     `;
 
-    public constructor(private _fb: UntypedFormBuilder) {}
+    private readonly _fb = inject(UntypedFormBuilder);
 
     public ngOnInit(): void {
         this.auth = this._fb.group({
