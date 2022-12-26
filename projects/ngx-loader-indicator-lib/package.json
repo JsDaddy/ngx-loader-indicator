@@ -1,5 +1,5 @@
 {
-    "name": "ngx-loader-indicator-lib",
+    "name": "ngx-loader-indicator",
     "version": "15.0.0",
     "description": "The best directive without wrapping your element to additional component",
     "license": "MIT",
