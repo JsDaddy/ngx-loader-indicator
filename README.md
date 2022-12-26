@@ -1,16 +1,20 @@
 <a href="http://jsdaddy.io/img/logo.png">
-  <h1 align="center">NGX Loader INDICATOR</h1>
+  <h1 align="center">NGX LOADER INDICATOR</h1>
 </a>
 
 <p align="center">
-  NGX LOADER INDICATOR is the best directive without wrapping your element to additional component
+  NGX LOADER INDICATOR is the best directive to have loader without wrapping your element to additional component
 </p>
 
+[![CI](https://github.com/JsDaddy/ngx-loader-indicator/actions/workflows/quality-check.yml/badge.svg?branch=develop)](https://github.com/JsDaddy/ngx-loader-indicator/actions/workflows/main.yml)
 [![npm](https://img.shields.io/npm/v/ngx-loader-indicator.svg)](https://www.npmjs.com/package/ngx-loader-indicator)
-<a href="https://www.npmjs.com/package/ngx-loader-indicator">
-  <img src="https://img.shields.io/npm/dt/ngx-loader-indicator.svg" alt="npm downloads" >
-</a>
-[![npm](https://img.shields.io/npm/dm/ngx-loader-indicator.svg)](https://www.npmjs.com/package/ngx-loader-indicator)
+[![npm downloads](https://img.shields.io/npm/dt/ngx-loader-indicator.svg)](https://npmjs.org/ngx-loader-indicator)
+
+[![npm](https://img.shields.io/npm/dm/ngx-loader-indicatore.svg)](https://www.npmjs.com/package/ngx-loader-indicator)
+
+[![GitHub contributors](https://img.shields.io/github/contributors/JSDaddy/ngx-loader-indicator.svg?style=flat)](https://github.com/JSDaddy/ngx-loader-indicator)
+
+[![GitHub stars](https://img.shields.io/github/stars/JSDaddy/ngx-loader-indicator.svg?label=GitHub%20Stars&style=flat)](https://github.com/JSDaddy/ngx-loader-indicator)
 
 You can also try our NGX MASK [Download](https://www.npmjs.com/package/ngx-mask) it.
 You can also try our NGX COPYPASTE [Download](https://www.npmjs.com/package/ngx-copypaste) it.

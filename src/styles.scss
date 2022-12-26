@@ -1,187 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
-@import "@angular/material/prebuilt-themes/indigo-pink.css";
-@import "~bootstrap/dist/css/bootstrap.css";
+@import 'assets/styles/variables';
 
-* {
-  margin: 0;
-  padding: 0;
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
 body {
-  font-family: sans-serif;
-  padding: 0 0 100px 0;
-  margin: 0;
-  position: relative;
-}
-
-mat-input-container {
-  width: 100%;
-}
-.mat-form-field {
-  display: block !important;
-}
-.mat-drawer-container {
-  background-color: #fff;
-}
-
-.mat-grid-list,
-.mat-grid-tile,
-.mat-grid-tile .mat-figure {
-  position: inherit !important;
-}
-
-.mat-toolbar {
-  background-color: #fff;
-  color: #383838;
-}
-
-.mat-toolbar-row,
-.mat-toolbar-single-row {
-  padding: 0 !important;
-  span {
-    font-size: 24px;
-  }
-}
-
-.mat-toolbar-row,
-.mat-toolbar-single-row {
-  padding: 0 !important;
-  span {
-    font-size: 24px;
-  }
-}
-
-.mat-grid-wr {
-  padding-top: 40px;
-  padding-bottom: 35px;
-}
-
-.mat-card-wr {
-  font-family: 'Lato', sans-serif;
-  padding-bottom: 60px;
-  .mat-card {
-    border-radius: 0;
-    padding: 0;
-    font-family: 'Lato', sans-serif;
-    color: #383838;
-  }
-  .mat-drawer-container {
-    color: #383838;
-  }
-  .mat-card-header-text {
-    padding: 0 0 25px 0;
-    margin: 0;
-    width: 100%;
-  }
-  .mat-card-header .mat-card-subtitle:not(:first-child) {
-    font-weight: normal;
-  }
-  .mat-card-subtitle,
-  .mat-card-content,
-  .mat-card-header .mat-card-title {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !important;
     font-size: 16px;
-  }
-  .mat-card-header .mat-card-subtitle:not(:first-child) {
-    margin: 0;
-  }
-  .mat-card-actions,
-  .mat-card-content,
-  .mat-card-subtitle,
-  .mat-card-title {
-    margin-bottom: 10px;
-  }
-  .mat-card-content > :last-child:not(.mat-card-footer),
-  .mat-card > :last-child:not(.mat-card-footer) {
-    margin: 0;
-    padding: 0;
-  }
-  .mat-form-field.mat-focused {
-    .mat-form-field-ripple {
-      background-color: #ffcc00;
-    }
-    .mat-form-field-label {
-      color: #383838;
-    }
-  }
-  .form-control {
-    padding-right: 20px;
-  }
-  .flex-row {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    .flex-cell {
-      &:last-child {
-        width: 100%;
-        padding-left: 40px;
-      }
-      b {
-        display: inline-block;
+    background: #f5f5f5;
+}
+
+code {
+    background: #f7f7f7 !important;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: #fc0 !important;
+}
+
+mat-card {
+    mat-card-content {
+        padding-left: 10px;
         padding-right: 10px;
-      }
     }
-    p {
-      display: inline-block;
-      vertical-align: middle;
-      padding-right: 30px;
-    }
-  }
-  .mat-form-wr {
-    margin-right: 60px;
-  }
 }
 
-.git-link {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 5px;
-  transition: all ease 0.15s;
-  img {
-    max-width: 30px;
-    opacity: 0.9;
-  }
-  &:hover {
-    opacity: 0.8;
-  }
+.mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: #fc0 !important;
 }
 
-.mat-form-field {
-  &.mat-focused .mat-form-field-label {
-    color: #000 !important;
-  }
-  .mat-form-field-label {
-    transition: all ease 0.15s;
-  }
+.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: #fc0 !important;
 }
 
-.mat-form-field.mat-focused .mat-form-field-ripple {
-  background-color: #ffcc00 !important;
-}
-
-.mat-form-field-appearance-legacy .mat-hint {
-  color: orangered;
-}
-
-.mat-button,
-.mat-flat-button,
-.mat-icon-button,
-.mat-stroked-button {
-  background-color: #ffcc00;
-  color: #ffffff;
-  margin-top: 25px;
-}
-
-.mat-button.mat-accent[disabled], .mat-button.mat-primary[disabled], .mat-button.mat-warn[disabled], .mat-button[disabled][disabled], .mat-icon-button.mat-accent[disabled], .mat-icon-button.mat-primary[disabled], .mat-icon-button.mat-warn[disabled], .mat-icon-button[disabled][disabled], .mat-stroked-button.mat-accent[disabled], .mat-stroked-button.mat-primary[disabled], .mat-stroked-button.mat-warn[disabled], .mat-stroked-button[disabled][disabled] {
-  color: #fff;
-}
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  transition: background-color 5000s ease-in-out 0s;
-}
-.mat-grid-wr {
-  text-align: center;
-  color: #383838;
-  font-size: 24px;
+.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: #fc0 !important;
 }

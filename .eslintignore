@@ -1,0 +1,19 @@
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Node
+/node_modules
+
+# IDEs and editors
+.idea/
+
+# Visual Studio Code
+.vscode
+.history
+
+# Miscellaneous
+/.angular
+/coverage

@@ -1,0 +1,34 @@
+{
+    "name": "ngx-loader-indicator-lib",
+    "version": "15.0.0",
+    "description": "The best directive without wrapping your element to additional component",
+    "license": "MIT",
+    "keywords": [
+        "ngx-loader-indicator",
+        "ngx-loader",
+        "ngx",
+        "ngx-spinner",
+        "ngx-loader-spinner",
+        "angular",
+        "jsdaddy"
+    ],
+    "author": "ngx-loader-indicator",
+    "contributors": [
+        "ngx-loader-indicator"
+    ],
+    "homepage": "https://github.com/JsDaddy/ngx-loader-indicator",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:JsDaddy/ngx-loader-indicator.git"
+    },
+    "bugs": {
+        "url": "https://github.com/JsDaddy/ngx-loader-indicator/issues"
+    },
+    "peerDependencies": {
+        "@angular/common": ">=14.0.0",
+        "@angular/core": ">=14.0.0"
+    },
+    "dependencies": {
+        "tslib": "^2.3.0"
+    }
+}
