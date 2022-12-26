@@ -1,12 +1,25 @@
 import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { AppComponent } from './app/app.component';
+import { provideEnvironmentNgxLoaderIndicator } from 'ngx-loader-indicator';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 
 if (environment.production) {
-  enableProdMode();
+    enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.log(err));
+bootstrapApplication(AppComponent, {
+    providers: [
+        provideAnimations(),
+        provideEnvironmentNgxLoaderIndicator(),
+        {
+            provide: HIGHLIGHT_OPTIONS,
+            useValue: {
+                fullLibraryLoader: () => import('highlight.js'),
+            },
+        },
+    ],
+}).catch((err) => console.error(err));
