@@ -1,5 +1,5 @@
 /*
- * Public API Surface of ngx-loader-indicator-lib
+ * Public API Surface of ngx-loader-indicator
  */
 
 export * from './lib/ngx-loader-indicator.directive';
