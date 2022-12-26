@@ -99,7 +99,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ngx-highlightjs
 MIT
 
-ngx-loader-indicator-lib
+ngx-loader-indicator
 MIT
 
 rxjs
