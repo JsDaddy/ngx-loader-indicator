@@ -11,8 +11,6 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { HighlightModule } from 'ngx-highlightjs';
-import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { NgxLoaderIndicatorDirective } from 'ngx-loader-indicator';
 import { ICard } from './cards.interface';
 import { TrackByService } from '@libraries/track-by/track-by.service';
@@ -30,13 +28,11 @@ import { OpenSourcePath } from '@open-source/path/open-source.path';
     standalone: true,
     imports: [
         CommonModule,
+        NgOptimizedImage,
         HighlightModule,
-        MatCardModule,
-        MatFormFieldModule,
         ReactiveFormsModule,
         NgxLoaderIndicatorDirective,
         ColorPipe,
-        NgOptimizedImage,
         AssetPipe,
         CustomLoaderComponent,
         FormComponent,
