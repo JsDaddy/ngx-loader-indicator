@@ -8,7 +8,6 @@ import {
     ViewChildren,
 } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { HighlightModule } from 'ngx-highlightjs';
 import { NgxLoaderIndicatorDirective } from 'ngx-loader-indicator';
@@ -30,7 +29,6 @@ import { OpenSourcePath } from '@open-source/path/open-source.path';
         CommonModule,
         NgOptimizedImage,
         HighlightModule,
-        ReactiveFormsModule,
         NgxLoaderIndicatorDirective,
         ColorPipe,
         AssetPipe,
