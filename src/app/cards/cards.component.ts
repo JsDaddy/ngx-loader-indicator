@@ -52,6 +52,7 @@ export class CardsComponent implements AfterViewInit {
     public readonly trackByPath = inject(TrackByService).trackBy('id');
     public readonly cardTypeInput: CardType = CardType.INPUT;
     public readonly cardTypeLoader: CardType = CardType.LOADER;
+
     private readonly scrollService = inject(ScrollService);
 
     public ngAfterViewInit(): void {
