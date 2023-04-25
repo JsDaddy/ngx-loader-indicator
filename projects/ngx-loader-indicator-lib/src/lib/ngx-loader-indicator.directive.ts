@@ -2,7 +2,7 @@ import { Directive, ElementRef, inject, Input, Renderer2 } from '@angular/core';
 import { NGX_LOADER_INDICATOR_CONFIG, IConfig } from './ngx-loader-indicator.config';
 
 @Directive({
-    selector: '[loader]',
+    selector: '[jsdaddyLoader]',
     standalone: true,
 })
 export class NgxLoaderIndicatorDirective {
@@ -15,7 +15,7 @@ export class NgxLoaderIndicatorDirective {
     public loaderEl!: HTMLDivElement;
 
     @Input()
-    public set loader(value: boolean) {
+    public set jsdaddyLoader(value: boolean) {
         if (!value) {
             this.loaderEl ? this._setStyles(this.loaderEl, { display: 'none' }) : null;
             return;
