@@ -1,0 +1,110 @@
+@import 'src/styles';
+.content {
+    gap: 16px;
+    padding: 16px;
+    border-top: 1px solid rgba(25, 25, 25, 0.05);
+    box-sizing: border-box;
+    .yellow {
+        &.card {
+            background: rgba(255, 214, 77, 0.05);
+            border: 1px solid var(--yellow);
+        }
+    }
+    .card {
+        padding: 10px;
+        gap: 10px;
+        background: rgba(25, 25, 25, 0.02);
+        border-radius: 15px;
+        .mr-title {
+            margin: 10px 0 10px 26px;
+        }
+        .cards-block {
+            scroll-margin-top: 185px;
+            .light-card {
+                flex: 50%;
+                border-radius: 10px;
+                .light-title {
+                    margin-bottom: 20px;
+                    span {
+                        margin-left: 10px;
+                        font-size: 16px;
+                        color: rgba(25, 25, 25, 0.25);
+                    }
+                }
+                .source {
+                    font-size: 10px;
+                    color: rgba(25, 25, 25, 0.45);
+                    margin-bottom: 10px;
+                }
+                .white-input {
+                    display: block;
+                    .input-view,
+                    .custom-code {
+                        height: fit-content;
+                        cursor: text;
+                        padding-left: 15px;
+                        border-radius: 10px;
+                        border: none;
+                        width: 100%;
+                        overflow: hidden;
+                    }
+                    .input-img,
+                    .custom-pre {
+                        position: relative;
+                        right: 20px;
+                    }
+                    .input-view {
+                        white-space: pre-line;
+                    }
+                    .custom-code {
+                        white-space: break-spaces;
+                    }
+                    .custom-pre {
+                        top: 10px;
+                        align-self: flex-start;
+                    }
+                }
+            }
+            .dark-card {
+                flex: 50%;
+                border-radius: 10px;
+                margin-left: 30px;
+                .dark-input {
+                    .h-input {
+                        height: 51px;
+                        padding-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+.pd-15 {
+    padding: 15px;
+}
+.mrl-50 {
+    margin-left: 50px;
+}
+
+@media screen and (max-width: $mobileWidth) {
+    .content {
+        .card {
+            .cards-block {
+                flex-direction: column;
+                .dark-card {
+                    flex: 100%;
+                    margin-left: 0;
+                }
+                .light-card {
+                    flex: 100%;
+                    margin-bottom: 10px;
+                    .white-input {
+                        .custom-code {
+                            overflow: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

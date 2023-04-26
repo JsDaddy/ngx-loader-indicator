@@ -1,71 +1,13 @@
-<ngx-loader-indicator-demo-header></ngx-loader-indicator-demo-header>
-
-<div class="content-wrapper">
-    <div class="main-container">
-        <div class="row">
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title
-                        ><h3>Authentication process with default configuration</h3></mat-card-title
-                    >
-                </mat-card-header>
-                <mat-card-content>
-                    <p>Usage</p>
-                    <pre><code [highlight]="baseCode"></code></pre>
-                    <form (ngSubmit)="login()" [formGroup]="auth" [loader]="isLoading">
-                        <h2 class="login-title">Login</h2>
-                        <div>
-                            <mat-form-field class="">
-                                <input
-                                    matInput
-                                    type="email"
-                                    placeholder="Email"
-                                    formControlName="email" />
-                                <mat-hint
-                                    align="end"
-                                    *ngIf="
-                                        auth.controls['email']?.errors &&
-                                        auth.controls['email']?.touched
-                                    ">
-                                    You can't leave this empty.
-                                </mat-hint>
-                            </mat-form-field>
-                        </div>
-                        <div>
-                            <mat-form-field class="">
-                                <input
-                                    matInput
-                                    autocomplete
-                                    type="password"
-                                    placeholder="Password"
-                                    formControlName="password" />
-                                <mat-hint
-                                    align="end"
-                                    *ngIf="
-                                        auth.controls['password']?.hasError('required') &&
-                                        auth.controls['password']?.touched
-                                    ">
-                                    You can't leave this empty.
-                                </mat-hint>
-                            </mat-form-field>
-                        </div>
-                        <button mat-button [disabled]="auth.invalid">Login</button>
-                    </form>
-                </mat-card-content>
-            </mat-card>
+<div class="content-wrapper column">
+    <jsdaddy-open-source-header [activeLink]="githubMaskLink" />
+    <section class="mask-wrap row">
+        <div class="drawer-container column">
+            <jsdaddy-open-source-accordion [lists]="lists" />
         </div>
-        <div class="row">
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title><h3>Loader with custom configuration</h3></mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <p>Usage</p>
-                    <pre><code [highlight]="customProviderCode"></code></pre>
-                    <pre><code [highlight]="customHtmlCode"></code></pre>
-                    <ngx-loader-indicator-custom-loader></ngx-loader-indicator-custom-loader>
-                </mat-card-content>
-            </mat-card>
+        <div class="right-section column">
+            <jsdaddy-open-source-sub-header [title]="title" [subtitle]="subtitle" [chips]="chips" />
+            <jsdaddy-open-source-cards [cardDocs]="card" />
+            <jsdaddy-open-source-footer />
         </div>
-    </div>
+    </section>
 </div>

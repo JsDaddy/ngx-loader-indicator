@@ -20,7 +20,7 @@
                 "@angular-eslint/component-selector": [
                     "error",
                     {
-                        "prefix": "ngx-loader-indicator",
+                        "prefix": "jsdaddy",
                         "style": "kebab-case",
                         "type": "element"
                     }
@@ -28,7 +28,7 @@
                 "@angular-eslint/directive-selector": [
                     "error",
                     {
-                        "prefix": "loader",
+                        "prefix": "jsdaddy",
                         "style": "camelCase",
                         "type": "attribute"
                     }
