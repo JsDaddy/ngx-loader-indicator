@@ -1,5 +1,5 @@
 <form (ngSubmit)="login()" [formGroup]="form" [jsdaddyLoader]="isLoading" class="column">
-    <div *ngFor="let formItem of formItems; trackBy : trackByPath">
+    <div *ngFor="let formItem of formItems; trackBy: trackByPath">
         <jsdaddy-input
             [formControlName]="formItem.formControlName"
             [placeholder]="formItem.placeholder"
