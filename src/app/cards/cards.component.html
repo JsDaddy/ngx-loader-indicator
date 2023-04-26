@@ -15,18 +15,18 @@
                         width="20"
                         height="20"
                         [ngSrc]="'hand-box' | asset : openSourcePath"
-                        alt="hand-box" />
+                        alt="Hand with box" />
                     <span class="span">Usage</span>
                 </div>
                 <span class="source uppercase ls-25 full-white span">Source code</span>
                 <div class="white-input">
                     <pre class="row" *ngIf="card.customCodeProvider">
                         <code class="custom-code bg-white" [highlight]="card.customCodeProvider"></code>
-                        <img height="18" width="13" [ngSrc]="'input-vector' | asset : openSourcePath" class="custom-pre" alt="input-vector" />
+                        <img height="18" width="13" [ngSrc]="'input-vector' | asset : openSourcePath" class="custom-pre" alt="Input vector" />
                     </pre>
                     <pre class="row">
                         <code type="text" [highlight]="card.code" class="input-view bg-white"></code>
-                        <img height="18" width="13" [ngSrc]="'input-vector' | asset : openSourcePath" class="input-img ais-c" alt="input-vector" />
+                        <img height="18" width="13" [ngSrc]="'input-vector' | asset : openSourcePath" class="input-img ais-c" alt="Input vector" />
                     </pre>
                 </div>
             </div>
