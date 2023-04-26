@@ -18,7 +18,6 @@ import { ColorPipe } from '@open-source/color/color.pipe';
 import { AssetPipe } from '@libraries/asset/asset.pipe';
 import { CustomLoaderComponent } from '../custom-loader/custom-loader.component';
 import { FormComponent } from '../shared/form/form.component';
-import { CardType } from './cards.enum';
 import { InputComponent } from '@libraries/input/input.component';
 import { OpenSourcePath } from '@open-source/path/open-source.path';
 
@@ -48,8 +47,6 @@ export class CardsComponent implements AfterViewInit {
     public readonly activeCardId$: Observable<number> = inject(ScrollService).activeCard$;
     public readonly openSourcePath = OpenSourcePath.OPEN_SOURCE;
     public readonly trackByPath = inject(TrackByService).trackBy('id');
-    public readonly cardTypeInput: CardType = CardType.INPUT;
-    public readonly cardTypeLoader: CardType = CardType.LOADER;
 
     private readonly scrollService = inject(ScrollService);
 

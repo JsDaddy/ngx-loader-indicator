@@ -1,5 +1,4 @@
 import { ICard } from '../../app/cards/cards.interface';
-import { CardType } from '../../app/cards/cards.enum';
 
 export const Card: ICard[] = [
     {
@@ -9,7 +8,7 @@ export const Card: ICard[] = [
                 </form> `,
         id: 1,
         anchor: 'authentication',
-        cardType: CardType.INPUT,
+        cardType: true,
     },
     {
         header: 'Loader with custom configuration',
@@ -39,6 +38,6 @@ providers: [
 }) `,
         id: 2,
         anchor: 'loader',
-        cardType: CardType.LOADER,
+        cardType: false,
     },
 ];

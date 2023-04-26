@@ -31,10 +31,9 @@
                 </div>
             </div>
             <div class="dark-card bg-black">
-                <div class="dark-input column pd-15" [ngSwitch]="card.cardType">
-                    <jsdaddy-open-source-form *ngSwitchCase="cardTypeInput" />
-                    <jsdaddy-open-source-loader-indicator-custom-loader
-                        *ngSwitchCase="cardTypeLoader" />
+                <div class="dark-input column pd-15">
+                    <jsdaddy-open-source-form *ngIf="card.cardType" />
+                    <jsdaddy-open-source-loader-indicator-custom-loader *ngIf="!card.cardType"/>
                 </div>
             </div>
         </div>
