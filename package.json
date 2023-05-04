@@ -15,6 +15,7 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
+        "tel": "ng serve --host 192.168.0.105",
         "build": "ng build angular-loader --base-href /ngx-loader-indicator/ --configuration production",
         "build:lib": "ng build --configuration production ngx-loader-indicator-lib && npm run copy-libdocs",
         "copy-libdocs": "cp README.md LICENSE dist/ngx-loader-indicator-lib",
