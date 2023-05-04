@@ -14,6 +14,7 @@ import { NgxLoaderIndicatorDirective, provideNgxLoaderIndicator } from 'ngx-load
                 background: '',
                 position: 'relative',
                 bottom: '60px',
+                'z-index': '0',
             },
             imgStyles: {
                 width: '100px',
