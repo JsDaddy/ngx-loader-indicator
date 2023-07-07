@@ -20,7 +20,8 @@ jobs:
           node-version: 18
       - name: Check quality
         run: |
-          npm ci
+          npm ci --force
+          git submodule update --init --recursive --remote
           npm run lint
           npm test
           npm run build

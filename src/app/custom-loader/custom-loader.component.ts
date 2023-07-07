@@ -2,20 +2,22 @@ import { Component } from '@angular/core';
 import { NgxLoaderIndicatorDirective, provideNgxLoaderIndicator } from 'ngx-loader-indicator';
 
 @Component({
-    selector: 'ngx-loader-indicator-custom-loader',
+    selector: 'jsdaddy-open-source-loader-indicator-custom-loader',
     templateUrl: './custom-loader.component.html',
     styleUrls: ['./custom-loader.component.css'],
     standalone: true,
     imports: [NgxLoaderIndicatorDirective],
     providers: [
         provideNgxLoaderIndicator({
-            img: 'https://avatars2.githubusercontent.com/u/32452610?s=200&v=4',
+            img: 'assets/images/shared/rotate-logo.svg',
             loaderStyles: {
-                background: 'rgba(255, 255, 255, 0.8)',
+                background: '',
+                position: 'relative',
+                bottom: '60px',
+                'z-index': '0',
             },
             imgStyles: {
-                width: '50px',
-                background: 'yellow',
+                width: '100px',
             },
             rotate: {
                 duration: 5000,

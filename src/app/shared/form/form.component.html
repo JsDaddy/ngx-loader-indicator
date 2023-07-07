@@ -1,0 +1,12 @@
+<form (ngSubmit)="login()" [formGroup]="form" [jsdaddyLoader]="isLoading" class="column">
+    <div *ngFor="let formItem of formItems; trackBy: trackByPath">
+        <jsdaddy-input
+            [autoFocus]="false"
+            [formControlName]="formItem.formControlName"
+            [placeholder]="formItem.placeholder"
+            [validators]="formItem.validators" />
+    </div>
+    <button [disabled]="form.invalid" class="row ai-c span pointer bg-yellow auth-btn">
+        Login
+    </button>
+</form>
