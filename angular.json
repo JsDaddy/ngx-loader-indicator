@@ -21,7 +21,7 @@
             },
             "architect": {
                 "build": {
-                    "builder": "@angular-devkit/build-angular:browser",
+                    "builder": "@angular-devkit/build-angular:browser-esbuild",
                     "options": {
                         "outputPath": "dist/angular-loader",
                         "index": "src/index.html",

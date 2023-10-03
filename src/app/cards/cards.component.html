@@ -2,7 +2,7 @@
     <div
         class="card"
         *ngFor="let card of cardDocs; trackBy: trackByPath"
-        [ngClass]="type | color : card.id"
+        [ngClass]="type | color: card.id"
         [id]="card.id"
         #cards>
         <div class="mr-title title row uppercase ls-25 something">
@@ -14,7 +14,7 @@
                     <img
                         width="20"
                         height="20"
-                        [ngSrc]="'hand-box' | asset : openSourceCardsPath"
+                        [ngSrc]="'hand-box' | asset: openSourceCardsPath"
                         alt="Hand with box" />
                     <span class="span">Usage</span>
                 </div>
