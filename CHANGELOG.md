@@ -1,3 +1,9 @@
+# 16.0.1(2023-10-03)
+
+### Feature
+
+- update dependencies
+
 # 16.0.0(2023-07-07)
 
 ### Feature
