@@ -21,12 +21,14 @@
             },
             "architect": {
                 "build": {
-                    "builder": "@angular-devkit/build-angular:browser-esbuild",
+                    "builder": "@angular-devkit/build-angular:application",
                     "options": {
                         "outputPath": "dist/angular-loader",
+                        "browser": "src/main.ts",
                         "index": "src/index.html",
-                        "main": "src/main.ts",
-                        "polyfills": "src/polyfills.ts",
+                        "polyfills": [
+                            "zone.js"
+                        ],
                         "tsConfig": "src/tsconfig.app.json",
                         "assets": ["src/favicon.ico", "src/assets"],
                         "styles": [
@@ -34,19 +36,27 @@
                             "src/styles.scss"
                         ],
                         "scripts": [],
-                        "vendorChunk": true,
                         "extractLicenses": false,
-                        "buildOptimizer": false,
                         "sourceMap": true,
                         "optimization": false,
                         "namedChunks": true
                     },
                     "configurations": {
                         "production": {
+                            "optimization": true,
+                            "sourceMap": false,
+                            "namedChunks": false,
+                            "extractLicenses": true,
                             "budgets": [
                                 {
+                                    "type": "initial",
+                                    "maximumWarning": "500kb",
+                                    "maximumError": "1mb"
+                                },
+                                {
                                     "type": "anyComponentStyle",
-                                    "maximumWarning": "6kb"
+                                    "maximumWarning": "2kb",
+                                    "maximumError": "10kb"
                                 }
                             ],
                             "fileReplacements": [
@@ -54,33 +64,31 @@
                                     "replace": "src/environments/environment.ts",
                                     "with": "src/environments/environment.prod.ts"
                                 }
-                            ],
-                            "optimization": true,
-                            "outputHashing": "all",
-                            "sourceMap": false,
-                            "namedChunks": false,
-                            "extractLicenses": true,
-                            "vendorChunk": false,
-                            "buildOptimizer": true
+                            ]
+                        },
+                        "development": {
+                            "optimization": false,
+                            "extractLicenses": false,
+                            "sourceMap": true
                         }
                     },
-                    "defaultConfiguration": ""
+                    "defaultConfiguration": "production"
                 },
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                        "browserTarget": "angular-loader:build"
+                        "buildTarget": "angular-loader:build"
                     },
                     "configurations": {
                         "production": {
-                            "browserTarget": "angular-loader:build:production"
+                            "buildTarget": "angular-loader:build:production"
                         }
                     }
                 },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "angular-loader:build"
+                        "buildTarget": "angular-loader:build"
                     }
                 },
                 "test": {
