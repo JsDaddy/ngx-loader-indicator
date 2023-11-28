@@ -11,6 +11,7 @@ import { GithubStarsService } from '@libraries/github/github-stars.service';
 import { provideHttpClient } from '@angular/common/http';
 import { DOMAIN } from '@libraries/token/token';
 import { BaseHttpService } from '@libraries/base-http/base-http.service';
+import { TrackByService } from '@libraries/track-by/track-by.service';
 
 if (environment.production) {
     enableProdMode();
@@ -22,6 +23,7 @@ bootstrapApplication(AppComponent, {
         provideRouter([]),
         GithubStarsService,
         provideHttpClient(),
+        TrackByService,
         {
             provide: DOMAIN,
             useValue: [BaseHttpService],
