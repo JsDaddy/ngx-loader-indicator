@@ -3,7 +3,7 @@ name: GitHub pages
 on:
   push:
     branches:
-      - feat/update-version
+      - develop
 
 jobs:
   build:
@@ -39,11 +39,11 @@ jobs:
           bash .github/workflows/scripts/replace_template.sh $RELEASE_VERSION
           npm run build
 
-#      - name: Deploy demo
-#        uses: peaceiris/actions-gh-pages@v3
-#        with:
-#          github_token: ${{ secrets.GITHUB_TOKEN }}
-#          publish_dir: ./dist/angular-loader/browser
+      - name: Deploy demo
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist/angular-loader/browser
 
     outputs:
       version: ${{ steps.semantic-release.outputs.new-release-version }}
