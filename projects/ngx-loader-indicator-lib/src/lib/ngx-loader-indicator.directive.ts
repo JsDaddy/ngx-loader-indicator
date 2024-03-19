@@ -1,4 +1,4 @@
-import { Directive, ElementRef, inject, Input, Renderer2 } from '@angular/core';
+import { Directive, effect, ElementRef, inject, input, Renderer2 } from '@angular/core';
 import { NGX_LOADER_INDICATOR_CONFIG, IConfig } from './ngx-loader-indicator.config';
 
 @Directive({
@@ -13,9 +13,13 @@ export class NgxLoaderIndicatorDirective {
     private readonly _renderer = inject(Renderer2);
 
     public loaderEl!: HTMLDivElement;
-
-    @Input()
-    public set jsdaddyLoader(value: boolean) {
+    public jsdaddyLoader = input<boolean>(false);
+    public constructor() {
+        effect(() => {
+            this.processValue(this.jsdaddyLoader());
+        });
+    }
+    private processValue(value: boolean) {
         if (!value) {
             this.loaderEl ? this._setStyles(this.loaderEl, { display: 'none' }) : null;
             return;
@@ -40,7 +44,6 @@ export class NgxLoaderIndicatorDirective {
         }
         this._renderer.setAttribute(imgEl, 'src', img);
     }
-
     private _setStyles(element: HTMLElement, styles: { [key: string]: string } | undefined): void {
         if (!styles) {
             return;

@@ -26,9 +26,6 @@
                         "outputPath": "dist/angular-loader",
                         "browser": "src/main.ts",
                         "index": "src/index.html",
-                        "polyfills": [
-                            "zone.js"
-                        ],
                         "tsConfig": "src/tsconfig.app.json",
                         "assets": ["src/favicon.ico", "src/assets"],
                         "styles": [
@@ -43,6 +40,9 @@
                     },
                     "configurations": {
                         "production": {
+                            "define": {
+                                "VERSION": "'<%version%>'"
+                            },
                             "optimization": true,
                             "sourceMap": false,
                             "namedChunks": false,
@@ -55,7 +55,7 @@
                                 },
                                 {
                                     "type": "anyComponentStyle",
-                                    "maximumWarning": "2kb",
+                                    "maximumWarning": "9kb",
                                     "maximumError": "10kb"
                                 }
                             ],
@@ -67,6 +67,9 @@
                             ]
                         },
                         "development": {
+                            "define": {
+                                "VERSION": "'v0.0.1'"
+                            },
                             "optimization": false,
                             "extractLicenses": false,
                             "sourceMap": true
