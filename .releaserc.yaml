@@ -1,0 +1,7 @@
+branches:
+  - feat/update-version
+
+plugins:
+  - '@semantic-release/commit-analyzer'
+  - '@semantic-release/github'
+  - 'semantic-release-export-data'
