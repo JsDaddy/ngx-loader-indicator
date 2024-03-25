@@ -1,5 +1,5 @@
 <form (ngSubmit)="login()" [formGroup]="form" [jsdaddyLoader]="isLoading" class="column">
-    @for (formItem of formItems; track trackByPath($index, formItem)) {
+    @for (formItem of formItems; track formItem) {
         <div>
             <jsdaddy-input
                 [autoFocus]="false"
