@@ -34,6 +34,7 @@
             "@open-source/*": ["./src/libraries/open-source/*"],
             "@libraries/*": ["./src/libraries/*"]
         },
+        "skipLibCheck": true
     },
     "angularCompilerOptions": {
         "enableI18nLegacyMessageIdFormat": false,
