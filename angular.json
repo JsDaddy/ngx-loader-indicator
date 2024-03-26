@@ -2,23 +2,29 @@
     "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
     "version": 1,
     "newProjectRoot": "projects",
+    "schematics": {
+        "@schematics/angular:component": {
+            "style": "scss",
+            "standalone": true,
+            "changeDetection": "OnPush",
+            "viewEncapsulation": "Emulated"
+        },
+        "@schematics/angular:directive": {
+            "standalone": true
+        },
+        "@schematics/angular:pipe": {
+            "standalone": true
+        },
+        "@schematics/angular:application": {
+            "strict": true
+        }
+    },
     "projects": {
         "angular-loader": {
             "root": "",
             "sourceRoot": "src",
             "projectType": "application",
             "prefix": "",
-            "schematics": {
-                "@schematics/angular:component": {
-                    "style": "scss",
-                    "standalone": true,
-                    "changeDetection": "OnPush",
-                    "viewEncapsulation": "ShadowDom"
-                },
-                "@schematics/angular:application": {
-                    "strict": true
-                }
-            },
             "architect": {
                 "build": {
                     "builder": "@angular-devkit/build-angular:application",
@@ -26,7 +32,7 @@
                         "outputPath": "dist/angular-loader",
                         "browser": "src/main.ts",
                         "index": "src/index.html",
-                        "tsConfig": "src/tsconfig.app.json",
+                        "tsConfig": "tsconfig.app.json",
                         "assets": ["src/favicon.ico", "src/assets"],
                         "styles": [
                             "node_modules/highlight.js/styles/github.css",
@@ -43,33 +49,21 @@
                             "define": {
                                 "VERSION": "'<%version%>'"
                             },
-                            "optimization": true,
-                            "sourceMap": false,
-                            "namedChunks": false,
-                            "extractLicenses": true,
                             "budgets": [
                                 {
                                     "type": "initial",
-                                    "maximumWarning": "500kb",
-                                    "maximumError": "1mb"
+                                    "maximumWarning": "2mb",
+                                    "maximumError": "2mb"
                                 },
                                 {
                                     "type": "anyComponentStyle",
-                                    "maximumWarning": "9kb",
-                                    "maximumError": "10kb"
+                                    "maximumWarning": "15kb",
+                                    "maximumError": "15kb"
                                 }
                             ],
-                            "fileReplacements": [
-                                {
-                                    "replace": "src/environments/environment.ts",
-                                    "with": "src/environments/environment.prod.ts"
-                                }
-                            ]
+                            "outputHashing": "all"
                         },
                         "development": {
-                            "define": {
-                                "VERSION": "'v0.0.1'"
-                            },
                             "optimization": false,
                             "extractLicenses": false,
                             "sourceMap": true
@@ -88,22 +82,23 @@
                         }
                     }
                 },
-                "extract-i18n": {
-                    "builder": "@angular-devkit/build-angular:extract-i18n",
-                    "options": {
-                        "buildTarget": "angular-loader:build"
-                    }
-                },
                 "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
+                    "builder": "@angular-devkit/build-angular:web-test-runner",
                     "options": {
-                        "main": "src/test.ts",
-                        "polyfills": "src/polyfills.ts",
-                        "tsConfig": "src/tsconfig.spec.json",
-                        "karmaConfig": "src/karma.conf.js",
+                        "tsConfig": "tsconfig.spec.json",
+                        "inlineStyleLanguage": "scss",
+                        "assets": [
+                            "src/favicon.ico",
+                            "src/assets",
+                            "src/robots.txt",
+                            "src/sitemap.xml"
+                        ],
+                        "polyfills": [
+                            "zone.js",
+                            "zone.js/testing"
+                        ],
                         "styles": ["src/styles.scss"],
-                        "scripts": [],
-                        "assets": ["src/favicon.ico", "src/assets"]
+                        "scripts": []
                     }
                 },
                 "lint": {
