@@ -1,12 +1,21 @@
 {
     "compileOnSave": false,
     "compilerOptions": {
-        "baseUrl": "./",
-        "importHelpers": true,
-        "module": "es2020",
         "outDir": "./dist/out-tsc",
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "esModuleInterop": true,
         "sourceMap": true,
         "declaration": false,
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "importHelpers": true,
+        "target": "ES2022",
+        "module": "ES2022",
+        "lib": [
+            "ES2022",
+            "dom"
+        ],
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "noImplicitReturns": true,
@@ -14,31 +23,32 @@
         "noUncheckedIndexedAccess": true,
         "noImplicitOverride": true,
         "noPropertyAccessFromIndexSignature": true,
-        "moduleResolution": "node",
-        "experimentalDecorators": true,
-        "target": "ES2022",
+        "useUnknownInCatchVariables": true,
+        "exactOptionalPropertyTypes": true,
+        "useDefineForClassFields": false,
+        "removeComments": true,
+        "resolveJsonModule": true,
+        "allowSyntheticDefaultImports": true,
         "paths": {
-            "ngx-loader-indicator": ["projects/ngx-loader-indicator-lib/src/public-api"],
-            "@open-source/*": ["src/libraries/open-source/*"],
-            "@libraries/*": ["src/libraries/*"]
+            "ngx-loader-indicator": ["./projects/ngx-loader-indicator-lib/src/public-api"],
+            "@open-source/*": ["./src/libraries/open-source/*"],
+            "@libraries/*": ["./src/libraries/*"]
         },
-        "lib": ["esnext", "dom"],
-        "strict": true,
-        "useDefineForClassFields": false
+        "skipLibCheck": true
     },
     "angularCompilerOptions": {
+        "enableI18nLegacyMessageIdFormat": false,
+        "strictInjectionParameters": true,
+        "strictInputAccessModifiers": true,
+        "strictTemplates": true,
+        "preserveWhitespaces": true,
+        "fullTemplateTypeCheck": true,
         "extendedDiagnostics": {
             "checks": {
                 "invalidBananaInBox": "error",
                 "nullishCoalescingNotNullable": "warning"
             },
             "defaultCategory": "suppress"
-        },
-        "enableI18nLegacyMessageIdFormat": false,
-        "strictInjectionParameters": true,
-        "preserveWhitespaces": true,
-        "fullTemplateTypeCheck": true,
-        "strictInputAccessModifiers": true,
-        "strictTemplates": true
+        }
     }
 }
