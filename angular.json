@@ -39,9 +39,6 @@
                             "src/styles.scss"
                         ],
                         "scripts": [],
-                        "extractLicenses": false,
-                        "sourceMap": true,
-                        "optimization": false,
                         "namedChunks": true
                     },
                     "configurations": {
@@ -93,10 +90,7 @@
                             "src/robots.txt",
                             "src/sitemap.xml"
                         ],
-                        "polyfills": [
-                            "zone.js",
-                            "zone.js/testing"
-                        ],
+                        "polyfills": ["zone.js", "zone.js/testing"],
                         "styles": ["src/styles.scss"],
                         "scripts": []
                     }
