@@ -1,6 +1,5 @@
-import { enableProdMode } from '@angular/core';
+import { ɵprovideZonelessChangeDetection } from '@angular/core';
 
-import { environment } from './environments/environment';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
 import { provideEnvironmentNgxLoaderIndicator } from 'ngx-loader-indicator';
@@ -11,19 +10,14 @@ import { GithubStarsService } from '@libraries/github/github-stars.service';
 import { provideHttpClient } from '@angular/common/http';
 import { DOMAIN } from '@libraries/token/token';
 import { BaseHttpService } from '@libraries/base-http/base-http.service';
-import { TrackByService } from '@libraries/track-by/track-by.service';
-
-if (environment.production) {
-    enableProdMode();
-}
 
 bootstrapApplication(AppComponent, {
     providers: [
+        ɵprovideZonelessChangeDetection(),
         provideAnimations(),
         provideRouter([]),
         GithubStarsService,
         provideHttpClient(),
-        TrackByService,
         {
             provide: DOMAIN,
             useValue: [BaseHttpService],

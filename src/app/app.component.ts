@@ -9,6 +9,8 @@ import { lists } from '../assets/content/lists';
 import { ICard } from './cards/cards.interface';
 import { Card } from '../assets/content/card';
 import { CardsComponent } from './cards/cards.component';
+import { VersionToken } from '@libraries/version/version.token';
+declare const VERSION: string;
 
 @Component({
     selector: 'jsdaddy-open-source-root',
@@ -23,12 +25,14 @@ import { CardsComponent } from './cards/cards.component';
         FooterComponent,
         CardsComponent,
     ],
+    providers: [{ provide: VersionToken, useValue: VERSION }],
 })
 export class AppComponent {
-    public card: ICard[] = Card;
-    public lists: IListItem[] = lists;
-    public githubMaskLink = LinkPath.NGX_LOADER;
-    public title = 'Ngx-Loader Indicator';
-    public subtitle = 'Awesome loader for angular applications. No wrappers only you elements';
-    public chips = ['Website', 'Angular', 'Typescript', 'Carousel', 'Spinner'];
+    public readonly card: ICard[] = Card;
+    public readonly lists: IListItem[] = lists;
+    public readonly githubMaskLink = LinkPath.NGX_LOADER;
+    public readonly title = 'Ngx-Loader Indicator';
+    public readonly subtitle =
+        'Awesome loader for angular applications. No wrappers only you elements';
+    public readonly chips = ['Website', 'Angular', 'Typescript', 'Carousel', 'Spinner'];
 }
