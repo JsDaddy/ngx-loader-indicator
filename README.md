@@ -25,6 +25,10 @@ You can also try our NGX COPYPASTE [check](https://www.npmjs.com/package/ngx-cop
 $ npm install --save ngx-loader-indicator
 ```
 
+## Setup hooks
+```bash
+$ npm run init:hooks
+```
 
 ## Quickstart if ngx-loader-indicator version >= 15.0.0
 
