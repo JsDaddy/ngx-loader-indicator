@@ -2,7 +2,7 @@
 
 ### Feature
 
-- change @Input to signals
+- change decorators to signals
 
 <a name="17.0.0"></a>
 
