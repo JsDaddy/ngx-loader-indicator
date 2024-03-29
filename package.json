@@ -27,7 +27,8 @@
         "lint:fix": "ng lint --fix && npm run lint:scss:fix",
         "prettier:fix": "npx prettier --write .",
         "type-coverage-report": "typescript-coverage-report",
-        "type-coverage": "type-coverage"
+        "type-coverage": "type-coverage",
+        "init:git:hooks": ".github/scripts/setup_hooks.sh"
     },
     "repository": {
         "type": "git",
