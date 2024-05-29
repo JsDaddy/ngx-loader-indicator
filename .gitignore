@@ -42,6 +42,7 @@ testem.log
 Thumbs.db
 
 .angular
+.nx
 
 # Snyk
 .dccache
