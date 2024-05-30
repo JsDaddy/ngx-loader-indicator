@@ -94,7 +94,7 @@ jobs:
                             "type": "section",
                             "text": {
                               "type": "mrkdwn",
-                              "text": "Website URL: ${{ secrets.WEBSITE_URL || 'TBA' }}"
+                              "text": "Website URL: ${{ secrets.NPM_PACKAGE_URL || 'TBA' }}"
                             }
                           }
                         ]
