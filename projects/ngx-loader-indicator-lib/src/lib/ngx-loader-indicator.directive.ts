@@ -2,7 +2,7 @@ import { Directive, effect, ElementRef, inject, input, Renderer2 } from '@angula
 import { NGX_LOADER_INDICATOR_CONFIG, IConfig } from './ngx-loader-indicator.config';
 
 @Directive({
-    selector: '[jsdaddyLoader]',
+    selector: '[ngxLoaderIndicator]',
     standalone: true,
 })
 export class NgxLoaderIndicatorDirective {
@@ -13,10 +13,10 @@ export class NgxLoaderIndicatorDirective {
     private readonly _renderer = inject(Renderer2);
 
     public loaderEl!: HTMLDivElement;
-    public jsdaddyLoader = input<boolean>(false);
+    public ngxLoaderIndicator = input<boolean>(false);
     public constructor() {
         effect(() => {
-            this.processValue(this.jsdaddyLoader());
+            this.processValue(this.ngxLoaderIndicator());
         });
     }
     private processValue(value: boolean) {
@@ -27,8 +27,7 @@ export class NgxLoaderIndicatorDirective {
         const { rotate, hostStyles, loaderStyles, imgStyles, img } = this._config;
 
         this.loaderEl = this._renderer.createElement('div');
-        // tslint:disable-next-line:typedef
-        const imgEl = this._renderer.createElement('img');
+               const imgEl = this._renderer.createElement('img');
 
         imgEl.animate([{ transform: 'rotate(360deg)' }, { transform: 'rotate(0deg)' }], rotate);
 
@@ -44,7 +43,7 @@ export class NgxLoaderIndicatorDirective {
         }
         this._renderer.setAttribute(imgEl, 'src', img);
     }
-    private _setStyles(element: HTMLElement, styles: { [key: string]: string } | undefined): void {
+    private _setStyles(element: HTMLElement, styles: Record<string, string> | undefined): void {
         if (!styles) {
             return;
         }

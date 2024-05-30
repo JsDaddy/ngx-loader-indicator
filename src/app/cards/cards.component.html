@@ -18,12 +18,12 @@
                     <div class="white-input">
                         @if (card.customCodeProvider) {
                             <pre class="row">
-                  <code class="custom-code bg-white" [highlight]="card.customCodeProvider"></code>
+                  <code class="custom-code bg-white" language="html" [highlight]="card.customCodeProvider"></code>
                   <img height="18" width="13" [ngSrc]="'input-vector' | asset : openSourceCardsPath" class="custom-pre" alt="Input vector" />
                 </pre>
                         }
                         <pre class="row">
-                <code type="text" [highlight]="card.code" class="input-view bg-white"></code>
+                <code type="text" language="html" [highlight]="card.code" class="input-view bg-white"></code>
                 <img [ngSrc]="'input-vector' | asset : openSourceCardsPath" height="18" width="13"  class="input-img ais-c" alt="Input vector" />
               </pre>
                     </div>

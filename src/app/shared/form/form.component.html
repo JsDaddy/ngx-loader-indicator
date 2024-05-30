@@ -1,4 +1,4 @@
-<form (ngSubmit)="login()" [formGroup]="form" [jsdaddyLoader]="isLoading" class="column">
+<form (ngSubmit)="login()" [formGroup]="form" [ngxLoaderIndicator]="isLoading" class="column">
     @for (formItem of formItems; track formItem) {
         <div>
             <jsdaddy-input
