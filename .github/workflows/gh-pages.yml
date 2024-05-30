@@ -44,7 +44,6 @@ jobs:
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
                   publish_dir: ./dist/angular-loader/browser
-
         outputs:
             version: ${{ steps.semantic-release.outputs.new-release-version }}
 
