@@ -12,15 +12,20 @@ jobs:
             contents: write
         steps:
             - uses: actions/checkout@v4
+              with:
+                  submodules: true
 
             - uses: actions/setup-node@v4
               with:
                   node-version: 20
 
+            - uses: oven-sh/setup-bun@v1
+              with:
+                  bun-version: latest
+
             - name: Install deps
               run: |
-                  npm ci --force
-                  git submodule update --init --recursive --remote
+                  bun i
 
             - name: Semantic Release
               id: semantic-release
@@ -37,7 +42,7 @@ jobs:
                   echo "RELEASE_VERSION: $RELEASE_VERSION"
                   echo '********'
                   bash .github/workflows/scripts/replace_template.sh $RELEASE_VERSION
-                  npm run build
+                  bun run build
 
             - name: Deploy demo
               uses: peaceiris/actions-gh-pages@v3
