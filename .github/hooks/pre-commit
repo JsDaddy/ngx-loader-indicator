@@ -2,8 +2,7 @@
 
 set -e
 
-bun run lint-staged
-bun run lint
+bun lint-staged
 
 # bun run snyk:test
 
