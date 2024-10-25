@@ -4,7 +4,7 @@
 
 -   add tailwind
 -   change interface to type, remove prefix "I"
--    update dependencies
+-   update dependencies
 -   add ESLint strict rules
 
 # 17.3.2(2024-03-29)
