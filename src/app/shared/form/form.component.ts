@@ -10,7 +10,7 @@ import { of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { NgxLoaderIndicatorDirective } from 'ngx-loader-indicator';
 import { InputComponent } from '@libraries/input/input.component';
-import { IFormItem } from './form.interface';
+import { FormItem } from './form.type';
 
 @Component({
     selector: 'jsdaddy-open-source-form',
@@ -35,7 +35,7 @@ export class FormComponent {
         password: [null, this.passwordValidators],
     });
 
-    public readonly formItems: IFormItem[] = [
+    public readonly formItems: FormItem[] = [
         {
             formControlName: 'login',
             validators: this.loginValidators,

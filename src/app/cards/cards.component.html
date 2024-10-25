@@ -1,44 +1,49 @@
-<section class="content column bg-full-white">
-    @for (card of cardDocs(); track card.id) {
-        <div class="card" [class]="activeCardId() | color: card.id" [id]="card.id" #cards>
-            <div class="mr-title title row uppercase ls-25 something">
-                {{ card.header }}
-            </div>
-            <div class="cards-block row" [id]="card.anchor">
-                <div class="light-card bg-full-white pd-15">
-                    <div class="light-title row ai-c">
-                        <img
-                            width="20"
-                            height="20"
-                            [ngSrc]="'hand-box' | asset: openSourceCardsPath"
-                            alt="Hand with box" />
-                        <span class="span">Usage</span>
-                    </div>
-                    <span class="source uppercase ls-25 full-white span">Source code</span>
-                    <div class="white-input">
-                        @if (card.customCodeProvider) {
-                            <pre class="row">
-                  <code class="custom-code bg-white" language="html" [highlight]="card.customCodeProvider"></code>
-                  <img height="18" width="13" [ngSrc]="'input-vector' | asset : openSourceCardsPath" class="custom-pre" alt="Input vector" />
-                </pre>
-                        }
-                        <pre class="row">
-                <code type="text" language="html" [highlight]="card.code" class="input-view bg-white"></code>
-                <img [ngSrc]="'input-vector' | asset : openSourceCardsPath" height="18" width="13"  class="input-img ais-c" alt="Input vector" />
-              </pre>
-                    </div>
+@for (card of cardDocs(); track card.id) {
+    <div
+        class="flex flex-col p-2.5 gap-2.5 bg-dark/[.02] rounded-15px"
+        [class]="
+            activeCardId() === card.id ? 'border border-solid border-yellow bg-yellow/[.05]' : ''
+        "
+        #cards>
+        <div class="ml-4 flex items-center text-title text-dark uppercase tracking-[.25em]">
+            {{ card.header }}
+        </div>
+        <div class="flex gap-30px mob:flex-col mob:gap-15px scroll-mt-[185px]" [id]="card.anchor">
+            <div class="flex-[55%] rounded-10px bg-full-white p-15px">
+                <div class="flex items-start gap-2.5 mb-5">
+                    <img
+                        width="20"
+                        height="20"
+                        [ngSrc]="'hand-box' | asset: openSourceCardsPath"
+                        alt="Hand with box" />
+                    <span class="text-span text-dark/[.25]">Usage</span>
                 </div>
-                <div class="dark-card bg-black">
-                    <div class="dark-input column pd-15">
-                        @if (card.cardType) {
-                            <jsdaddy-open-source-form />
-                        }
-                        @if (!card.cardType) {
-                            <jsdaddy-open-source-loader-indicator-custom-loader />
-                        }
-                    </div>
+                <span class="uppercase tracking-[.25em] text-span text-dark/[.45]"
+                    >Source code</span
+                >
+                <div class="block mt-2.5">
+                    @if (card.customCodeProvider) {
+                        <pre class="flex text-span">
+                  <code class="bg-white w-full h-fit pl-15px rounded-10px border-none overflow-hidden whitespace-pre-line" language="html" [highlight]="card.customCodeProvider"></code>
+                  <img height="18" width="13" [ngSrc]="'input-vector' | asset : openSourceCardsPath" class="relative right-5 self-center" alt="Input vector" />
+                </pre>
+                    }
+                    <pre class="flex text-span">
+                <code type="text" language="html" [highlight]="card.code" class="bg-white w-full h-fit pl-15px rounded-10px border-none overflow-hidden whitespace-pre-line"></code>
+                <img [ngSrc]="'input-vector' | asset : openSourceCardsPath" height="18" width="13"  class="relative right-5 self-center" alt="Input vector" />
+              </pre>
+                </div>
+            </div>
+            <div class="flex-[45%] rounded-10px p-15px bg-dark">
+                <div class="flex flex-col gap-30px">
+                    @if (card.cardType) {
+                        <jsdaddy-open-source-form />
+                    }
+                    @if (!card.cardType) {
+                        <jsdaddy-open-source-loader-indicator-custom-loader />
+                    }
                 </div>
             </div>
         </div>
-    }
-</section>
+    </div>
+}

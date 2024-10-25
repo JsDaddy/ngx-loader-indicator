@@ -1,14 +1,20 @@
-<form (ngSubmit)="login()" [formGroup]="form" [ngxLoaderIndicator]="isLoading" class="column">
-    @for (formItem of formItems; track formItem) {
-        <div>
+<form
+    (ngSubmit)="login()"
+    [formGroup]="form"
+    [ngxLoaderIndicator]="isLoading"
+    class="flex flex-col gap-30px">
+    <div class="flex flex-col gap-25px">
+        @for (formItem of formItems; track formItem) {
             <jsdaddy-input
                 [autoFocus]="false"
                 [formControlName]="formItem.formControlName"
                 [placeholder]="formItem.placeholder"
                 [validators]="formItem.validators" />
-        </div>
-    }
-    <button [disabled]="form.invalid" class="row ai-c span pointer bg-yellow auth-btn">
+        }
+    </div>
+    <button
+        [disabled]="form.invalid"
+        class="flex items-center text-span cursor-pointer bg-full-white text-black w-fit rounded-4px py-5px px-6 auth-btn disabled:cursor-not-allowed">
         Login
     </button>
 </form>

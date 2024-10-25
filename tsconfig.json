@@ -12,10 +12,7 @@
         "importHelpers": true,
         "target": "ES2022",
         "module": "ES2022",
-        "lib": [
-            "ES2022",
-            "dom"
-        ],
+        "lib": ["ES2022", "dom"],
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "noImplicitReturns": true,
@@ -34,7 +31,8 @@
             "@open-source/*": ["./src/libraries/open-source/*"],
             "@libraries/*": ["./src/libraries/*"]
         },
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "noImplicitAny": true
     },
     "angularCompilerOptions": {
         "enableI18nLegacyMessageIdFormat": false,

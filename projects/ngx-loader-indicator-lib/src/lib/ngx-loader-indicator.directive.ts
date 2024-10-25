@@ -1,12 +1,12 @@
 import { Directive, effect, ElementRef, inject, input, Renderer2 } from '@angular/core';
-import { NGX_LOADER_INDICATOR_CONFIG, IConfig } from './ngx-loader-indicator.config';
+import { NGX_LOADER_INDICATOR_CONFIG, Config } from './ngx-loader-indicator.config';
 
 @Directive({
     selector: '[ngxLoaderIndicator]',
     standalone: true,
 })
 export class NgxLoaderIndicatorDirective {
-    private readonly _config = inject<IConfig>(NGX_LOADER_INDICATOR_CONFIG);
+    private readonly _config = inject<Config>(NGX_LOADER_INDICATOR_CONFIG);
 
     private readonly _el = inject(ElementRef);
 
@@ -21,13 +21,15 @@ export class NgxLoaderIndicatorDirective {
     }
     private processValue(value: boolean) {
         if (!value) {
-            this.loaderEl ? this._setStyles(this.loaderEl, { display: 'none' }) : null;
+            if (this.loaderEl) {
+                this._setStyles(this.loaderEl, { display: 'none' });
+            }
             return;
         }
         const { rotate, hostStyles, loaderStyles, imgStyles, img } = this._config;
 
         this.loaderEl = this._renderer.createElement('div');
-               const imgEl = this._renderer.createElement('img');
+        const imgEl = this._renderer.createElement('img');
 
         imgEl.animate([{ transform: 'rotate(360deg)' }, { transform: 'rotate(0deg)' }], rotate);
 
