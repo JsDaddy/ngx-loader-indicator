@@ -4,12 +4,12 @@ import { AccordionComponent } from '@open-source/accordion/accordion.component';
 import { SubHeaderComponent } from '@open-source//sub-header/sub-header.component';
 import { LinkPath } from '@libraries/link/link.path';
 import { FooterComponent } from '@open-source/footer/footer.component';
-import { IListItem } from '@open-source/accordion/content.interfaces';
 import { lists } from '../assets/content/lists';
-import { ICard } from './cards/cards.interface';
+import { CardItem } from './cards/cards.type';
 import { Card } from '../assets/content/card';
 import { CardsComponent } from './cards/cards.component';
 import { VersionToken } from '@libraries/version/version.token';
+import { ListItem } from '@open-source/accordion/content.types';
 declare const VERSION: string;
 
 @Component({
@@ -28,8 +28,8 @@ declare const VERSION: string;
     providers: [{ provide: VersionToken, useValue: VERSION }],
 })
 export class AppComponent {
-    public readonly card: ICard[] = Card;
-    public readonly lists: IListItem[] = lists;
+    public readonly card: CardItem[] = Card;
+    public readonly lists: ListItem[] = lists;
     public readonly githubMaskLink = LinkPath.NGX_LOADER;
     public readonly title = 'Ngx-Loader Indicator';
     public readonly subtitle =

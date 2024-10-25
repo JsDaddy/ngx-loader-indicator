@@ -3,6 +3,7 @@
 /tmp
 /out-tsc
 /bazel-out
+/src/styles.scss
 
 # Node
 /node_modules

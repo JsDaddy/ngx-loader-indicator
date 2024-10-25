@@ -1,7 +1,7 @@
 import { EnvironmentProviders, makeEnvironmentProviders, Provider } from '@angular/core';
 import {
     NGX_LOADER_INDICATOR_CONFIG,
-    IConfig,
+    Config,
     INITIAL_CONFIG,
     initialConfig,
     NEW_CONFIG,
@@ -12,11 +12,11 @@ export function _configFactory(
     initConfig: optionsConfig,
     configValue: optionsConfig
 ): optionsConfig {
-    const loaderStyles: IConfig['loaderStyles'] | null = configValue
+    const loaderStyles: Config['loaderStyles'] | null = configValue
         ? configValue.loaderStyles
         : null;
-    const imgStyles: IConfig['imgStyles'] | null = configValue ? configValue.imgStyles : null;
-    const rotate: IConfig['rotate'] | null = configValue ? configValue.rotate : null;
+    const imgStyles: Config['imgStyles'] | null = configValue ? configValue.imgStyles : null;
+    const rotate: Config['rotate'] | null = configValue ? configValue.rotate : null;
 
     return {
         ...initConfig,
