@@ -21,17 +21,17 @@
                 <span class="uppercase tracking-[.25em] text-span text-dark/[.45]"
                     >Source code</span
                 >
-                <div class="block mt-2.5">
+                <div class="flex flex-col mt-2.5 gap-2.5">
                     @if (card.customCodeProvider) {
                         <pre class="flex text-span">
-                  <code class="bg-white w-full h-fit pl-15px rounded-10px border-none overflow-hidden whitespace-pre-line" language="html" [highlight]="card.customCodeProvider"></code>
-                  <img height="18" width="13" [ngSrc]="'input-vector' | asset : openSourceCardsPath" class="relative right-5 self-center" alt="Input vector" />
-                </pre>
+                             <code class="bg-white w-full h-fit pl-15px rounded-10px border-none overflow-hidden whitespace-pre-line" language="html" [highlight]="card.customCodeProvider"></code>
+                             <img height="18" width="13" [ngSrc]="'input-vector' | asset : openSourceCardsPath" class="relative right-5 self-center" alt="Input vector" />
+                         </pre>
                     }
                     <pre class="flex text-span">
-                <code type="text" language="html" [highlight]="card.code" class="bg-white w-full h-fit pl-15px rounded-10px border-none overflow-hidden whitespace-pre-line"></code>
-                <img [ngSrc]="'input-vector' | asset : openSourceCardsPath" height="18" width="13"  class="relative right-5 self-center" alt="Input vector" />
-              </pre>
+                         <code type="text" language="html" [highlight]="card.code" class="bg-white w-full h-fit pl-15px rounded-10px border-none overflow-hidden whitespace-pre-line"></code>
+                         <img [ngSrc]="'input-vector' | asset : openSourceCardsPath" height="18" width="13"  class="relative right-5 self-center" alt="Input vector" />
+                    </pre>
                 </div>
             </div>
             <div class="flex-[45%] rounded-10px p-15px bg-dark">
