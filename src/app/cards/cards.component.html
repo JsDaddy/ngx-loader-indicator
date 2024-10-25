@@ -8,7 +8,9 @@
         <div class="ml-4 flex items-center text-title text-dark uppercase tracking-[.25em]">
             {{ card.header }}
         </div>
-        <div class="flex gap-30px mob:flex-col mob:gap-15px scroll-mt-[185px]" [id]="card.anchor">
+        <div
+            class="flex justify-between gap-30px mob:flex-col mob:gap-15px scroll-mt-[185px]"
+            [id]="card.anchor">
             <div class="flex-[55%] rounded-10px bg-full-white p-15px">
                 <div class="flex items-start gap-2.5 mb-5">
                     <img
@@ -24,7 +26,7 @@
                 <div class="flex flex-col mt-2.5 gap-2.5">
                     @if (card.customCodeProvider) {
                         <pre class="flex text-span">
-                             <code class="bg-white w-full h-fit pl-15px rounded-10px border-none overflow-hidden whitespace-pre-line" language="html" [highlight]="card.customCodeProvider"></code>
+                             <code class="bg-white w-full h-fit pl-15px rounded-10px border-none overflow-hidden whitespace-pre-wrap" language="html" [highlight]="card.customCodeProvider"></code>
                              <img height="18" width="13" [ngSrc]="'input-vector' | asset : openSourceCardsPath" class="relative right-5 self-center" alt="Input vector" />
                          </pre>
                     }
