@@ -2,7 +2,7 @@ import { Component, effect, ElementRef, inject, input, viewChildren } from '@ang
 import { NgOptimizedImage } from '@angular/common';
 import { HighlightModule } from 'ngx-highlightjs';
 import { NgxLoaderIndicatorDirective } from 'ngx-loader-indicator';
-import { ICard } from './cards.interface';
+import { CardItem } from './cards.type';
 import { ScrollService } from '@open-source/scroll/scroll.service';
 import { ColorPipe } from '@open-source/color/color.pipe';
 import { AssetPipe } from '@libraries/asset/asset.pipe';
@@ -30,7 +30,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
     styleUrls: ['./cards.component.scss'],
 })
 export class CardsComponent {
-    public cardDocs = input<ICard[]>();
+    public cardDocs = input<CardItem[]>();
 
     public cards = viewChildren<string, ElementRef<HTMLElement>>('cards', {
         read: ElementRef,

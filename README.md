@@ -18,7 +18,9 @@
 
 You can also try our NGX MASK [check](https://www.npmjs.com/package/ngx-mask) it.
 You can also try our NGX COPYPASTE [check](https://www.npmjs.com/package/ngx-copypaste) it.
-### You can try live  [demo](https://jsdaddy.github.io/ngx-loader-indicator/) with examples.
+
+### You can try live [demo](https://jsdaddy.github.io/ngx-loader-indicator/) with examples.
+
 ## Installing
 
 ```bash
@@ -39,7 +41,7 @@ bootstrapApplication(AppComponent, {
         (...)
     ],
 }).catch((err) => console.error(err));
-````
+```
 
 or configure for feature with `provideNgxLoaderIndicator` and import standalone directive `NgxLoaderIndicatorDirective`
 
@@ -68,7 +70,7 @@ or configure for feature with `provideNgxLoaderIndicator` and import standalone 
     ],
 })
 export class MyFeatureComponent {}
-````
+```
 
 ## Quickstart if ngx-loader-indicator version < 15.0.0
 
@@ -93,25 +95,26 @@ import {NgxLoaderIndicatorModule} from 'ngx-loader-indicator'
 ### Usage
 
 ```html
-<div [ngxLoaderIndicator]="isLoading">Content</div> 
+<div [ngxLoaderIndicator]="isLoading">Content</div>
 ```
 
 #### Examples
 
 ```html
 <form (ngSubmit)="save(form.value)" [formGroup]="form" [ngxLoaderIndicator]="isLoading">
-  <h2>Login</h2>
-  <input matInput type="email" placeholder="Email" #email formControlName="email">
-  <input matInput type="password" placeholder="Password" #name formControlName="password">
-  <button mat-button [disabled]="form.invalid">Login</button>
+    <h2>Login</h2>
+    <input matInput type="email" placeholder="Email" #email formControlName="email" />
+    <input matInput type="password" placeholder="Password" #name formControlName="password" />
+    <button mat-button [disabled]="form.invalid">Login</button>
 </form>
 ```
 
 ## Options
+
 You can define your custom options
 
-
 ### custom img (string) and colors
+
 ```typescript
   {
     img: string,
@@ -123,6 +126,7 @@ You can define your custom options
 ```
 
 ### custom wrapper layout colors
+
 ```typescript
   {
     loaderStyles: {
@@ -132,6 +136,7 @@ You can define your custom options
 ```
 
 ### animations options for image rotation
+
 ```typescript
     rotate: {
       delay?: number;
@@ -146,8 +151,8 @@ You can define your custom options
     },
 ```
 
-
 ### Usage
+
 ```typescript
 import {NgxLoaderIndicatorModule} from 'ngx-loader-indicator'
 

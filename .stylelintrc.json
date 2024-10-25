@@ -3,6 +3,9 @@
     "customSyntax": "postcss-scss",
     "plugins": ["stylelint-prettier"],
     "rules": {
+        "no-empty-source": null,
+        "scss/comment-no-empty": null,
+        "no-descending-specificity": null,
         "prettier/prettier": true,
         "selector-type-no-unknown": [
             true,

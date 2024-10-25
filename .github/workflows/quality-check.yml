@@ -1,28 +1,34 @@
 name: build and quality
 
 on:
-  push:
-    branches:
-      - develop
-  pull_request:
-    branches:
-      - develop
+    push:
+        branches:
+            - develop
+    pull_request:
+        branches:
+            - develop
 
 env:
     snyk_token: ${{ secrets.SNYK_TOKEN }}
+    REF: ${{ github.head_ref || github.ref_name }}
 
 jobs:
-  quality-check:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: Check quality
-        run: |
-          npm ci --force
-          git submodule update --init --recursive --remote
-          bash .github/workflows/scripts/quality.sh
+    quality-check:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  submodules: true
+                  ref: ${{ env.REF }}
+            - uses: oven-sh/setup-bun@v2
+              with:
+                  bun-version: latest
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+            - name: Check quality
+              run: |
+                  bun i
+                  bash .github/workflows/scripts/quality.sh

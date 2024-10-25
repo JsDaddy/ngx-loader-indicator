@@ -12,15 +12,20 @@ jobs:
             contents: write
         steps:
             - uses: actions/checkout@v4
+              with:
+                  submodules: true
 
             - uses: actions/setup-node@v4
               with:
                   node-version: 20
 
+            - uses: oven-sh/setup-bun@v2
+              with:
+                  bun-version: latest
+
             - name: Install deps
               run: |
-                  npm ci --force
-                  git submodule update --init --recursive --remote
+                  bun i
 
             - name: Semantic Release
               id: semantic-release
@@ -37,14 +42,13 @@ jobs:
                   echo "RELEASE_VERSION: $RELEASE_VERSION"
                   echo '********'
                   bash .github/workflows/scripts/replace_template.sh $RELEASE_VERSION
-                  npm run build
+                  bun run build
 
             - name: Deploy demo
-              uses: peaceiris/actions-gh-pages@v3
+              uses: peaceiris/actions-gh-pages@v4
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
                   publish_dir: ./dist/angular-loader/browser
-
         outputs:
             version: ${{ steps.semantic-release.outputs.new-release-version }}
 
@@ -55,7 +59,7 @@ jobs:
         steps:
             - name: Post to a Slack channel
               id: slack
-              uses: slackapi/slack-github-action@v1.26.0
+              uses: slackapi/slack-github-action@v1.27.0
               with:
                   channel-id: 'deployments'
                   payload: |

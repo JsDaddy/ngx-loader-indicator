@@ -1,7 +1,7 @@
 import { ValidatorFn } from '@angular/forms';
 
-export interface IFormItem {
+export type FormItem = {
     formControlName: string;
     placeholder: string;
     validators: ValidatorFn[];
-}
+};
