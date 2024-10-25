@@ -1,6 +1,6 @@
-import { ICard } from '../../app/cards/cards.interface';
+import { CardItem } from '../../app/cards/cards.type';
 
-export const Card: ICard[] = [
+export const Card: CardItem[] = [
     {
         header: 'Authentication process with default configuration',
         code: ` <form (ngSubmit)="login(auth.value)" [formGroup]="authForm" [loader]="isLoading">
