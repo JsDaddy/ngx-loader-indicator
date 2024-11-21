@@ -25,4 +25,5 @@ import { NgxLoaderIndicatorDirective, provideNgxLoaderIndicator } from 'ngx-load
         }),
     ],
 })
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class CustomLoaderComponent {}

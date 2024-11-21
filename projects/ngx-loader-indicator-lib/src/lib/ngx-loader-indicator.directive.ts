@@ -21,22 +21,22 @@ export class NgxLoaderIndicatorDirective {
     }
     private processValue(value: boolean) {
         if (!value) {
-            if (this.loaderEl) {
+            if (this.loaderEl instanceof HTMLDivElement) {
                 this._setStyles(this.loaderEl, { display: 'none' });
             }
             return;
         }
         const { rotate, hostStyles, loaderStyles, imgStyles, img } = this._config;
 
-        this.loaderEl = this._renderer.createElement('div');
-        const imgEl = this._renderer.createElement('img');
+        this.loaderEl = this._renderer.createElement('div') as HTMLDivElement;
+        const imgEl = this._renderer.createElement('img') as HTMLImageElement;
 
         imgEl.animate([{ transform: 'rotate(360deg)' }, { transform: 'rotate(0deg)' }], rotate);
 
         this._renderer.appendChild(this._el.nativeElement, this.loaderEl);
         this._renderer.appendChild(this.loaderEl, imgEl);
 
-        this._setStyles(this._el.nativeElement, hostStyles);
+        this._setStyles(this._el.nativeElement as HTMLElement, hostStyles);
         this._setStyles(this.loaderEl, loaderStyles);
         this._setStyles(imgEl, imgStyles);
 
