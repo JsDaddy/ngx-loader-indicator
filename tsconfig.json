@@ -32,10 +32,12 @@
             "@libraries/*": ["./src/libraries/*"]
         },
         "skipLibCheck": true,
-        "noImplicitAny": true
+        "noImplicitAny": true,
+        "isolatedModules": true
     },
     "angularCompilerOptions": {
         "enableI18nLegacyMessageIdFormat": false,
+        "strictStandalone": true,
         "strictInjectionParameters": true,
         "strictInputAccessModifiers": true,
         "strictTemplates": true,
@@ -44,7 +46,8 @@
         "extendedDiagnostics": {
             "checks": {
                 "invalidBananaInBox": "error",
-                "nullishCoalescingNotNullable": "warning"
+                "nullishCoalescingNotNullable": "warning",
+                "unusedStandaloneImports": "suppress"
             },
             "defaultCategory": "suppress"
         }
