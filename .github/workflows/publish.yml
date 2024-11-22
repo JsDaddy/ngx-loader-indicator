@@ -35,7 +35,7 @@ jobs:
             - name: Extract version
               id: get_version
               run: |
-                VERSION=$(node -p "require('./dist/ngx-mask-lib/package.json').version")
+                VERSION=$(node -p "require('./dist/ngx-loader-indicator-lib/package.json').version")
                 echo "version=$VERSION" >> $GITHUB_OUTPUT      
 
     slack_notification:
