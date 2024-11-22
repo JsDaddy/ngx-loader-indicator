@@ -1,5 +1,5 @@
 describe('App component', () => {
     it('First test', () => {
-        expect(1).toEqual(1);
+        void expect(1).toEqual(1);
     });
 });

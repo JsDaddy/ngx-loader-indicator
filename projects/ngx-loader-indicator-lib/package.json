@@ -1,6 +1,6 @@
 {
     "name": "ngx-loader-indicator",
-    "version": "18.0.4",
+    "version": "19.0.0",
     "description": "The best directive without wrapping your element to additional component",
     "license": "MIT",
     "keywords": [
