@@ -1,7 +1,7 @@
 {
     "extends": ["stylelint-config-recommended-scss"],
     "customSyntax": "postcss-scss",
-    "plugins": ["stylelint-prettier"],
+    "plugins": ["stylelint-scss", "stylelint-prettier"],
     "rules": {
         "no-empty-source": null,
         "scss/comment-no-empty": null,
@@ -11,6 +11,12 @@
             true,
             {
                 "ignoreTypes": ["/^mat-/", "markdown", ":host", ":root"]
+            }
+        ],
+        "scss/at-rule-no-unknown": [
+            true,
+            {
+                "ignoreAtRules": ["tailwind"]
             }
         ]
     }

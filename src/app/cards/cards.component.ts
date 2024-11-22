@@ -4,7 +4,6 @@ import { HighlightModule } from 'ngx-highlightjs';
 import { NgxLoaderIndicatorDirective } from 'ngx-loader-indicator';
 import { CardItem } from './cards.type';
 import { ScrollService } from '@open-source/scroll/scroll.service';
-import { ColorPipe } from '@open-source/color/color.pipe';
 import { AssetPipe } from '@libraries/asset/asset.pipe';
 import { CustomLoaderComponent } from '../custom-loader/custom-loader.component';
 import { FormComponent } from '../shared/form/form.component';
@@ -19,7 +18,6 @@ import { toSignal } from '@angular/core/rxjs-interop';
         NgOptimizedImage,
         HighlightModule,
         NgxLoaderIndicatorDirective,
-        ColorPipe,
         AssetPipe,
         CustomLoaderComponent,
         FormComponent,

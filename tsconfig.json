@@ -27,15 +27,17 @@
         "resolveJsonModule": true,
         "allowSyntheticDefaultImports": true,
         "paths": {
-            "ngx-loader-indicator": ["./projects/ngx-loader-indicator-lib/src/public-api"],
+            "@libraries/*": ["./src/libraries/*"],
             "@open-source/*": ["./src/libraries/open-source/*"],
-            "@libraries/*": ["./src/libraries/*"]
+            "ngx-loader-indicator": ["./projects/ngx-loader-indicator-lib/src/public-api"]
         },
         "skipLibCheck": true,
-        "noImplicitAny": true
+        "noImplicitAny": true,
+        "isolatedModules": true
     },
     "angularCompilerOptions": {
         "enableI18nLegacyMessageIdFormat": false,
+        "strictStandalone": true,
         "strictInjectionParameters": true,
         "strictInputAccessModifiers": true,
         "strictTemplates": true,
@@ -44,7 +46,8 @@
         "extendedDiagnostics": {
             "checks": {
                 "invalidBananaInBox": "error",
-                "nullishCoalescingNotNullable": "warning"
+                "nullishCoalescingNotNullable": "warning",
+                "unusedStandaloneImports": "suppress"
             },
             "defaultCategory": "suppress"
         }

@@ -10,13 +10,11 @@ import {
 
 export function _configFactory(
     initConfig: optionsConfig,
-    configValue: optionsConfig
+    configValue?: optionsConfig
 ): optionsConfig {
-    const loaderStyles: Config['loaderStyles'] | null = configValue
-        ? configValue.loaderStyles
-        : null;
-    const imgStyles: Config['imgStyles'] | null = configValue ? configValue.imgStyles : null;
-    const rotate: Config['rotate'] | null = configValue ? configValue.rotate : null;
+    const loaderStyles: Config['loaderStyles'] | null = configValue?.loaderStyles ?? null;
+    const imgStyles: Config['imgStyles'] | null = configValue?.imgStyles ?? null;
+    const rotate: Config['rotate'] | null = configValue?.rotate ?? null;
 
     return {
         ...initConfig,
