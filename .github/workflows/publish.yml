@@ -8,6 +8,8 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
+        outputs:
+            version: ${{ steps.get_version.outputs.version }}
         steps:
             - uses: actions/checkout@v4
               with:
@@ -27,6 +29,11 @@ jobs:
               run: bun run publish:lib
               env:
                   NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+            - name: Extract version
+              id: get_version
+              run: |
+                VERSION=$(node -p "require('./dist/ngx-mask-lib/package.json').version")
+                echo "version=$VERSION" >> $GITHUB_OUTPUT      
 
     slack_notification:
         needs:
@@ -61,6 +68,13 @@ jobs:
                             "text": {
                               "type": "mrkdwn",
                               "text": "Commit/PR URL: ${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+                            }
+                          },
+                          {
+                            "type": "section",
+                            "text": {
+                                "type": "mrkdwn",
+                                "text": "Version: `${{ needs.build.outputs.version || 'TBA' }}`"
                             }
                           },
                           {
