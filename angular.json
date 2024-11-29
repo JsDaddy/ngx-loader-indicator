@@ -29,6 +29,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:application",
                     "options": {
+                        "security": { "autoCsp": true },
                         "outputPath": "dist/angular-loader",
                         "browser": "src/main.ts",
                         "index": "src/index.html",
@@ -39,7 +40,9 @@
                             "src/styles.scss"
                         ],
                         "scripts": [],
-                        "namedChunks": true
+                        "namedChunks": true,
+                        "sourceMap": true,
+                        "optimization": false
                     },
                     "configurations": {
                         "production": {
