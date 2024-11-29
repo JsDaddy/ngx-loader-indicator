@@ -40,7 +40,9 @@
                             "src/styles.scss"
                         ],
                         "scripts": [],
-                        "namedChunks": true
+                        "namedChunks": true,
+                        "sourceMap": true,
+                        "optimization": false
                     },
                     "configurations": {
                         "production": {
