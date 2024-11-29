@@ -27,7 +27,7 @@ jobs:
                   bun run build:lib
             - name: Setup npm token
               run: |
-                 echo "//registry.npmjs.org/:_authToken=${{ secrets.npm_token }}" > dist/ngx-loader-indicator-lib/.npmrc
+                  echo "//registry.npmjs.org/:_authToken=${{ secrets.npm_token }}" > dist/ngx-loader-indicator-lib/.npmrc
             - name: Publish library
               run: bun run publish:lib
               env:
@@ -35,8 +35,8 @@ jobs:
             - name: Extract version
               id: get_version
               run: |
-                VERSION=$(node -p "require('./dist/ngx-loader-indicator-lib/package.json').version")
-                echo "version=$VERSION" >> $GITHUB_OUTPUT      
+                  VERSION=$(node -p "require('./dist/ngx-loader-indicator-lib/package.json').version")
+                  echo "version=$VERSION" >> $GITHUB_OUTPUT
 
     slack_notification:
         needs:
