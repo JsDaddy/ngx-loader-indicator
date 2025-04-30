@@ -94,10 +94,7 @@
         "typescript-eslint": "^8.31.1",
         "tailwindcss": "^4.1.4",
         "bun-types": "^1.2.11",
-        "postcss": "^8.5.3",
-        "postcss-nesting": "13.0.1",
-        "cssnano": "7.0.6",
-        "postcss-scss": "4.0.9"
+        "postcss": "^8.5.3"
     },
     "typeCoverage": {
         "atLeast": 98,

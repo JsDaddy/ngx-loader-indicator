@@ -24,6 +24,7 @@ You can also try our NGX COPYPASTE [check](https://www.npmjs.com/package/ngx-cop
 ## Installing
 
 ## npm
+
 ```bash
 $ npm install --save ngx-loader-indicator
 ```
@@ -33,7 +34,6 @@ $ npm install --save ngx-loader-indicator
 ```bash
 $ bun install --save ngx-loader-indicator
 ```
-
 
 ## Quickstart if ngx-loader-indicator version >= 15.0.0
 
