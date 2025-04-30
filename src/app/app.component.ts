@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { HeaderComponent } from '@open-source/header/header.component';
 import { AccordionComponent } from '@open-source/accordion/accordion.component';
 import { SubHeaderComponent } from '@open-source//sub-header/sub-header.component';
@@ -35,4 +35,7 @@ export class AppComponent {
     public readonly subtitle =
         'Awesome loader for angular applications. No wrappers only you elements';
     public readonly chips = ['Website', 'Angular', 'Typescript', 'Carousel', 'Spinner'];
+
+    @HostBinding('class')
+    public readonly hostClassname = 'block h-full';
 }
