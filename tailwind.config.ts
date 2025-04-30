@@ -1,6 +1,4 @@
-import { type Config } from 'tailwindcss';
-
-const tailwindConfig: Config = {
+const tailwindConfig = {
     content: ['./src/**/*.{html,scss,ts}'],
     theme: {
         extend: {
