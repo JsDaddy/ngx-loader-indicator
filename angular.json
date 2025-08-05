@@ -7,16 +7,34 @@
             "style": "scss",
             "standalone": true,
             "changeDetection": "OnPush",
-            "viewEncapsulation": "Emulated"
+            "viewEncapsulation": "Emulated",
+            "type": "component"
         },
         "@schematics/angular:directive": {
-            "standalone": true
+            "standalone": true,
+            "type": "directive"
         },
         "@schematics/angular:pipe": {
-            "standalone": true
+            "standalone": true,
+            "typeSeparator": "."
         },
         "@schematics/angular:application": {
             "strict": true
+        },
+        "@schematics/angular:service": {
+            "type": "service"
+        },
+        "@schematics/angular:guard": {
+            "typeSeparator": "."
+        },
+        "@schematics/angular:interceptor": {
+            "typeSeparator": "."
+        },
+        "@schematics/angular:module": {
+            "typeSeparator": "."
+        },
+        "@schematics/angular:resolver": {
+            "typeSeparator": "."
         }
     },
     "projects": {
@@ -85,17 +103,7 @@
                 "test": {
                     "builder": "@angular-devkit/build-angular:web-test-runner",
                     "options": {
-                        "tsConfig": "tsconfig.spec.json",
-                        "inlineStyleLanguage": "scss",
-                        "assets": [
-                            "src/favicon.ico",
-                            "src/assets",
-                            "src/robots.txt",
-                            "src/sitemap.xml"
-                        ],
-                        "polyfills": ["zone.js", "zone.js/testing"],
-                        "styles": ["src/styles.scss"],
-                        "scripts": []
+                        "tsConfig": "tsconfig.spec.json"
                     }
                 },
                 "lint": {
