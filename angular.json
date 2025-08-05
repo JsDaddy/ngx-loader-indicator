@@ -111,7 +111,7 @@
                             "src/robots.txt",
                             "src/sitemap.xml"
                         ],
-                        "polyfills": ["zone.js", "zone.js/testing"],
+                        "polyfills": [],
                         "styles": ["src/styles.scss"],
                         "scripts": []
                     }
