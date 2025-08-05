@@ -105,7 +105,7 @@ code.hljs {
 }
 
 /* src/styles.scss */
-/*! tailwindcss v4.1.4 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.1.11 | MIT License | https://tailwindcss.com */
 @layer properties;
 ::-webkit-scrollbar {
   width: 6px;
@@ -755,7 +755,12 @@ code.hljs {
       rotate,
       filter,
       -webkit-backdrop-filter,
-      backdrop-filter;
+      backdrop-filter,
+      display,
+      visibility,
+      content-visibility,
+      overlay,
+      pointer-events;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
@@ -992,4 +997,4 @@ code.hljs {
 }
 
 /* angular:styles/global:styles */
-/*# sourceMappingURL=styles-VBCNPMO6.css.map */
+/*# sourceMappingURL=styles-WBGVKB4A.css.map */
